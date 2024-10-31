@@ -1,0 +1,25 @@
+
+<?php if (!empty($data['success'])) : ?>
+	<p><?php echo __('You successfully contacted us, we\'ll get back to you as soon as possible!', 'nomis'); ?></p>
+<?php else : ?>
+
+
+<?php if (@$data['error'] == true) : ?>
+	<p><?php echo __('We apologize for the inconvenience, but something went wrong. Please try to contact us in another way.', 'nomis'); ?></p>
+<?php endif; ?>
+
+
+<form action="index.php?action=add-single-request&amp;lang=<?php echo $_GET['lang']; ?>" method="post">
+	<div data-role="fieldcontain">
+		<?php foreach ($data['form'] as $name => $info)
+		{
+			echo $this->formText($name,
+				@$info['info'],
+				@$info['options']);
+		}?>
+
+		<input type="submit" name="add_single_request" value="<?php echo __('Send', 'nomis'); ?>" data-theme="a">
+	</div>
+</form>
+<?php endif; ?>
+

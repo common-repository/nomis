@@ -1,0 +1,122 @@
+<?php
+global $api;
+
+$api->setPropertiesPerPage(20);
+$api->setRenderMode(false);
+$data = $api->run(array(
+	'action' => 'search',
+	'order' => 'random'
+));
+
+$cur = current($data['result']);
+
+if (!empty($cur)) : ?>
+
+	<p class="broker-logo"><img src="<?php echo $this->html($cur['broker'][0]['logo']); ?>" alt=""></p>
+	
+<?php endif;
+
+
+ob_start();
+?>
+
+<div class="nomis-photos-wrapper">
+	<ul class="nomis-photos">
+		<?php
+		$i = 0;
+		$urlParams = array_merge($data['search'], array());
+		foreach ($data['result'] as $p) :
+		if (!empty($p['photos'][0])) :
+			$urlParams['id'] = $p['house_id'];
+		$i++;
+		?>
+		<li>
+			<a href="index.php?action=property&amp;lang=<?php echo $_GET['lang']; ?>&amp;<?php echo http_build_query($urlParams, '', '&amp;'); ?>" data-transition="slide" style="background: url(<?php echo $p['photos'][0]['small']; ?>);">&nbsp;</a>
+		</li>
+		<?php endif; endforeach; ?>
+	</ul>
+</div>
+<br style="clear: left;">
+
+<?php
+$con = ob_get_contents();
+ob_end_clean();
+
+if ($i > 0)
+{
+	echo $con;
+}
+?>
+
+
+<a href="index.php" data-role="button" id="geo-button" class="hide"><?php echo __('Search in neighborhood', 'nomis'); ?></a>
+
+<div data-role="collapsible" data-collapsed="true">
+	<h3><?php echo __('Search', 'nomis'); ?></h3>
+	<form method="get" action="index.php" data-transition="slide"> 
+		<input type="hidden" name="action" value="search" />
+		<input type="hidden" name="lang" value="<?php echo $_GET['lang']; ?>" />
+
+		<div data-role="fieldcontain">
+
+			<select name="min-price" id="min-price" data-native-menu="false">
+				<option value=""><?php echo __('Minimum price', 'nomis'); ?></option>
+	<?php foreach (range(500, 5000, 750) as $price) : ?>
+				<option value="<?php echo $price; ?>" label="€<?php echo number_format($price); ?>+"<?php
+					if (!empty($data['search']['min-price']) && strtolower($data['search']['min-price']) == $price) echo ' selected="selected"';?>>€<?php echo number_format($price); ?>+</option>
+	<?php endforeach; ?>
+
+			</select>
+
+			<select name="max-price" id="max-price" data-native-menu="false">
+				<option value=""><?php echo __('Maximum price', 'nomis'); ?></option>
+	<?php foreach (range(500, 5000, 750) as $price) : ?>
+				<option value="<?php echo $price; ?>" label="€<?php echo $price; ?>"<?php
+					if (!empty($data['search']['max-price']) && strtolower($data['search']['max-price']) == $price) echo ' selected="selected"';?>>€<?php echo number_format($price); ?></option>
+	<?php endforeach; ?>
+
+			</select>
+
+			<div id="geo-city">
+				<select name="city" id="city" data-native-menu="false">
+					<option value=""><?php echo __('City', 'nomis'); ?></option>
+		<?php foreach ($this->getAllCities() as $city) : ?>
+					<option value="<?php echo $this->html(strtolower($city)); ?>" label="<?php echo $this->html($city); ?>"<?php
+						if (!empty($data['search']['city']) && strtolower($data['search']['city']) == strtolower($city)) echo ' selected="selected"';?>><?php echo $this->html($city); ?></option>
+		<?php endforeach; ?>
+
+				</select>
+			</div>
+
+			<select name="interior" id="interior" data-native-menu="false">
+				<option value=""><?php echo __('Interior', 'nomis'); ?></option>
+	<?php foreach (array(
+		'Unfurnished',
+		'Furnished',
+		'Bare'
+	) as $value) : ?>
+				<option value="<?php echo $value; ?>" label="<?php echo $this->html($value); ?>"<?php
+					if (!empty($data['search']['interior']) && strtolower($data['search']['interior']) == strtolower($value)) echo ' selected="selected"';?>><?php echo $this->html(__($value, 'nomis')); ?></option>
+	<?php endforeach; ?>
+
+			</select>
+
+			<select name="bedrooms" id="bedrooms" data-native-menu="false">
+				<option value=""><?php echo __('Bedrooms', 'nomis'); ?></option>
+	<?php foreach (range(1, 5) as $value) : ?>
+				<option value="<?php echo $value; ?>" label="<?php echo $this->html($value); ?>+"<?php
+					if (!empty($data['search']['bedrooms']) && $data['search']['bedrooms'] == $value) echo ' selected="selected"';?>><?php echo $this->html($value); ?>+</option>
+	<?php endforeach; ?>
+
+			</select>
+
+			<!--div id="geo-checkbox">
+				<input type="hidden" name="geo" value=""/>
+				<input type="checkbox" name="enable-geo" id="enable-geo" />
+				<label for="enable-geo">Search in neighborhood</label>
+			</div-->
+		</div>
+
+		<button type="submit" data-theme="a"><?php echo __('Search', 'nomis'); ?></button>
+	</form>
+</div>

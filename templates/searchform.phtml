@@ -1,0 +1,43 @@
+<form method="get" action="" id="nomis-searchform"<?php if (get_option('nomis_search_display_labels') == '1'): ?> class="with-labels"<?php endif; ?>>
+
+	<?php 
+	$searchCriteria = get_option('nomis_search_criteria');
+	nomisSearch($searchCriteria, $data, 'search', $this->getAllCities(), $this->getAllDistricts(), $this->getAllHouseTypes(), $this->getAllCountries());
+	?>
+
+	<div class="submit">
+		<input type="submit" class="search_button" value="<?php echo _e('Search', 'nomis'); ?>" title="<?php _e('Search', 'nomis'); ?>" />
+	</div>
+
+	<?php if ($searchCriteria['forsale'] == 1): ?>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{			
+			$('input[name="for-sale"]').change(function()
+			{
+				if ($(this).val() == '1')
+				{
+					$('.criterium.min-price').hide();
+					$('.criterium.max-price').hide();
+
+					$('.criterium.forsale-min-price').show();
+					$('.criterium.forsale-max-price').show();
+				}
+				else if ($(this).val() == '0')
+				{
+					$('.criterium.forsale-min-price').hide();
+					$('.criterium.forsale-max-price').hide();
+
+					$('.criterium.min-price').show();
+					$('.criterium.max-price').show();
+				}
+			});
+			
+			// init
+			$('input#for-sale-0').attr('checked', true);
+			$('.criterium.forsale-min-price').hide();
+			$('.criterium.forsale-max-price').hide();
+		});
+	</script>
+	<?php endif; ?>
+</form>

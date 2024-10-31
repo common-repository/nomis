@@ -1,0 +1,457 @@
+#nomis-properties {
+	margin:0;
+	padding:0;
+}
+
+#nomis-properties li {
+	list-style:none;
+	margin-bottom:10px;
+	border:1px solid #ccc;
+	padding:10px;
+	position:relative;
+}
+
+#nomis-properties h3 a {
+	font-weight:bold;
+	font-size:1.1em;
+	text-decoration: none;
+}
+
+#nomis-properties .photo {
+	width:100px;
+	position: absolute;
+	left:10px;
+	top:10px
+}
+
+#nomis-properties .photo a {
+	display:block;
+	height:100px;
+	background-position:center center;
+	background-image: url(./../images/cross.gif);
+	background-color: #d5d5d5;
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+}
+
+#nomis-properties .info {
+	margin-left:120px;
+	font-size:12px;
+}
+
+#nomis-properties .key {
+	width:23%;
+	float:left;
+	font-weight:bold;
+	margin-bottom:0;
+}
+
+#nomis-properties .value {
+	width:25%;
+	float:left;
+	margin-right:2%;
+	margin-bottom:0;
+}
+
+#nomis-property .text {
+	width:60%;
+	float:left;
+}
+
+#nomis-property .details {
+	margin-bottom:1em;
+}
+
+#nomis-property .detailgroup {
+	margin-bottom:1em;
+}
+
+#nomis-property .details h3 {
+	font-weight:bold;
+}
+
+#nomis-property .details .key {
+	width:40%;
+	float:left;
+	margin:0;
+}
+
+#nomis-property .details .value {
+	width:60%;
+	float:left;
+	margin:0;
+}
+
+#nomis-property .description {
+	margin-bottom:1em;
+}
+
+.clear {
+	clear:both;
+}
+
+#nomis-property .photos {
+	margin-bottom:1em;
+	width:40%;
+	float:right;
+}
+
+#nomis-property .photos ul {
+	margin:0;
+	float:right;
+}
+
+#nomis-property .photos li {
+	list-style:none;
+	float:right;
+}
+
+#nomis-property .photos a {
+	border:1px solid #ccc;
+	padding:3px;
+	margin:0 6px 6px 0;
+	display:block;
+	float:right;
+}
+
+#nomis-property .photos a:hover {
+	border-color:#666;
+}
+
+#nomis-property .photos img {
+	border:none;
+	float:left;
+}
+
+#nomis-property .addthis {
+	line-height:15px;
+	margin:3px 0;
+}
+
+#nomis-property #media-holder {
+	border:3px solid #ccc;
+}
+
+#nomis-property .location-controls span {
+	display:block;
+	float:left;
+	line-height:30px;
+	padding:0 8px;
+}
+
+#nomis-property .location-controls a {
+	color:#333;
+	text-decoration: underline;
+}
+
+#nomis-property .location-controls a.active {
+	text-decoration: none;
+}
+
+
+#nomis-property .location-controls .active span {
+	background:#ccc;
+}
+
+#nomis-property .maps, #nomis-property .streetview {
+	height:350px;
+}
+
+#mail-to-friend, #contact-about-house-form {
+	width: 500px;
+	padding:10px;
+}
+
+#contact-about-house-form, #mail-to-friend {
+	overflow-x:hidden;
+}
+
+.nomis-fancybox-close-button {
+	width:auto !important;
+	cursor:pointer;
+}
+
+#nomis-fancybox-response, #mail-to-friend-response {
+	margin-bottom:1em;
+}
+
+#mail-to-friend h3, #contact-about-house-form h3 {
+	font-size:2em;
+	margin-bottom:1em;
+}
+
+#mail-to-friend dt, #contact-about-house-form dt, #nomis-rental-declaration dt, #nomis-request dt, .nomis-form dt {
+	width:30%;
+	float:left;
+	margin-bottom:3px;
+}
+
+#mail-to-friend dd, #contact-about-house-form dd, #nomis-rental-declaration dd, #nomis-request dd, .nomis-form dd {
+	width: 70%;
+	float:left;
+	margin-bottom:3px;
+}
+
+.nomis-form .error {
+	color:#c00;
+}
+
+.nomis-form input, .nomis-form select, .nomis-form textarea, #mail-to-friend input, #mail-to-friend textarea, #contact-about-house-form input, #contact-about-house-form textarea, #nomis-rental-declaration input, #nomis-rental-declaration textarea, #nomis-request input, #nomis-request textarea {
+	width:90%;
+}
+
+.nomis-form .submit, #mail-to-friend .submit, #contact-about-house-form .submit, #nomis-rental-declaration .submit, #nomis-request .submit {
+	width:120px;
+}
+
+.nomis-form input, #nomis-request input, .nomis-form select, #nomis-request select, .nomis-form textarea, #nomis-request textarea, #nomis-rental-declaration input, #nomis-rental-declaration select, #nomis-rental-declaration textarea {
+	margin-bottom:0;
+	height:22px;
+}
+
+#nomis-request select, #nomis-rental-declaration select, .nomis-form select {
+	height:23px;
+}
+
+#nomis-request dd, #nomis-request dt, #nomis-rental-declaration dd, #nomis-rental-declaration dt, .nomis-form dt, .nomis-form dd {
+	margin-top:5px;
+}
+
+#nomis-request label, #nomis-rental-declaration label, .nomis-form label {
+	line-height: 22px;
+}
+
+#nomis-request .message, #nomis-rental-declaration .message, .nomis-form textarea {
+	display:block;
+}
+
+.nomis-form textarea, #nomis-request textarea, #nomis-rental-declaration textarea {
+	height:150px;
+}
+
+#nomis-searchform .criterium {
+	float:left;
+	width:50%;
+	margin-top:8px;
+	height:25px;
+}
+
+#nomis-searchform h4, #nomis-searchform select {
+	width:95%;
+	margin:0;
+}
+
+#nomis-searchform label {
+	float:left;
+	width:45%;
+}
+
+#nomis-searchform.with-labels h4, #nomis-searchform.with-labels select {
+	width:45%;
+	float:left;
+}
+
+#nomis-searchform select {
+	padding:2px;
+}
+
+#nomis-searchform .criterium.checkbox {
+	width:25%;
+}
+
+#nomis-searchform.with-labels h4 {
+	font-size:1em;
+}
+
+#nomis-searchform .search_button {
+	margin-top:8px;
+}
+
+#nomis-searchform .radio, #nomis-quick-search .radio, #nomis-searchform .checkbox, #nomis-quick-search .checkbox {
+	margin-top:5px;
+}
+
+#nomis-searchform .radio input, #nomis-quick-search .radio input, #nomis-searchform .checkbox input, #nomis-quick-search .checkbox input {
+	margin:2px 3px 0 0;
+	float:left;
+}
+
+#nomis-searchform .radio label, #nomis-quick-search .radio label, #nomis-searchform .checkbox label, #nomis-quick-search .checkbox label {
+	margin:0 15px 0 0;
+	float:left;
+	width:auto;
+}
+
+#nomis-random-properties .key, #nomis-random-properties .value {
+	display:inline;
+}
+
+#nomis-random-properties .key {
+	display:none;
+}
+
+#nomis-random-properties .available_at .key {
+	display:inline;
+}
+
+#nomis-random-properties .available_at .key:after {
+	content:':';
+}
+
+#nomis-random-properties li {
+	margin-bottom:1em;
+	list-style:none;
+}
+
+#nomis-quick-search select {
+	width:100%;
+	padding:2px;
+}
+
+.image-holder {
+	display:block;
+	width:108px;
+	height:64px;
+	background:#d5d5d5 url(./../images/cross.gif) no-repeat center center;
+}
+
+#nomis-pagination li {
+	list-style: none;
+	float:left;
+	margin:0 3px 0 0;
+}
+
+#nomis-pagination a {
+	display:block;
+	line-height: 20px;
+	padding:0 6px;
+	border:1px solid #ccc;
+	color:#333;
+	text-decoration: none;
+}
+
+#nomis-pagination .active a {
+	font-weight: bold;
+}
+
+#nomis-property-photos-2 {
+	border:3px solid #ccc;
+	margin-bottom:20px;
+}
+
+#nomis-property-2 .left {
+	width:58%;
+	float:left;
+}
+
+#nomis-property-2 .details .item {
+	width:50%;
+	float:left;
+}
+
+
+#nomis-property-2 .right {
+	width:38%;
+	float:right;
+}
+
+#nomis-property-photo-large {
+	height:230px;
+	position:relative;
+}
+
+#nomis-photo-zoom {
+	position:absolute;
+	width:40px;
+	height:40px;
+	background:url(./../images/zoom.png);
+	bottom:0;
+	cursor:pointer;
+}
+
+#nomis-property-photo-large a {
+	display:block;
+	height:100%;
+	background-position:center center;
+}
+
+#nomis-property-photo-large {
+	border-bottom:3px solid #ccc;
+}
+
+#nomis-property-photos-carousel {
+	display:none;
+	position:relative;
+}
+
+#nomis-property-photos-carousel img {
+	float:left;
+}
+
+#nomis-property-photos-carousel li, #nomis-property-3 #nomis-property-photos-carousel li {
+	width:100px !important;
+	height:100px !important;
+	position:static !important;
+}
+
+.jcarousel-prev, .jcarousel-next {
+	display:block;
+	width:25px;
+	height:25px;
+	position:absolute;
+	cursor:pointer;
+	top:40px;
+	left:3px;
+	background-image:url(./../images/arrow-left.png);
+}
+
+.jcarousel-next {
+	right:3px;
+	left:auto;
+	background-image:url(./../images/arrow-right.png);
+}
+
+#nomis-properties-map {
+	height:300px;
+}
+
+#nomis-property-3, #tabs-nav, #tabs-nav li {
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+
+#nomis-streetview-holder, #nomis-maps-holder {
+	height:300px;
+	border:2px solid #ccc;
+}
+
+.nomis-form .checkbox label {
+	display:none;
+}
+
+.nomis-form .checkbox input {
+	width:15px !important;
+	float:left;
+	margin:3px 5px 0 0;
+}
+
+.nomis-form .checkbox .message {
+	float:left;
+	width:auto;
+}
+
+.nomis-form .checkbox .error {
+	width:100%;
+	display:block;
+}
+
+#nomis-properties .status, #nomis-random-properties .status {
+	position:absolute;
+	z-index:1;
+	top:2px;
+	left:2px;
+	background:#000;
+	color:#fff;
+	padding:3px 5px;
+}

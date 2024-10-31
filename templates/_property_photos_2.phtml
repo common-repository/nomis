@@ -1,0 +1,72 @@
+<?php if (isset($house['photos'][0])): ?>
+<div id="nomis-property-photos-2">
+	<div id="previous-photos"></div>
+	<div id="nomis-property-photo-large">
+		<div id="nomis-photo-zoom"></div>
+		<a style="background-image:url(<?php echo $house['photos'][0]['middle']; ?>)" href="<?php echo $house['photos'][0]['huge']; ?>" rel="fancybox"></a>
+	</div>
+	<div id="next-photos">
+		<?php $i = 0; foreach ($house['photos'] as $photo): $i ++; if($i == 1) continue; ?>
+		<a href="<?php echo $photo['huge']; ?>" rel="fancybox"></a>
+		<?php endforeach; ?>
+	</div>
+	<ul id="nomis-property-photos-carousel">
+		<?php $i = 0; foreach ($house['photos'] as $photo): $i++; ?>
+		<li>
+			<a href="javascript:;" title="<?php echo $photo['huge']; ?>" rel="<?php echo $photo['middle']; ?> ">
+				<img src="<?php echo $photo['small']; ?>" alt="<?php echo $title; ?>" />
+			</a>
+		</li>
+		<?php endforeach; ?>
+	</ul>
+	<div class="clear"></div>
+</div>
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/nomis/javascript/jquery.jcarousel.min.js"></script>
+<script type="text/javascript">
+	function showPhotoCarousel()
+	{
+		$('#nomis-photo-zoom').click(function()
+		{
+			$('#nomis-property-photo-large a').trigger('click');
+		});
+		$('#nomis-property-photos-carousel').show();
+		$('#nomis-property-photos-carousel').jcarousel();
+		$('#nomis-property-photos-carousel a').click(function()
+		{
+			$('#nomis-property-photo-large a').fadeOut(100);
+			$('#nomis-property-photo-large a').css('background-image', 'url('+$(this).attr('title')+')').attr('href', $(this).attr('rel'));
+			$('<img />').attr('src', $(this).attr('rel')).load(function()
+			{
+				$('#nomis-property-photo-large a').fadeIn(100);
+			});
+
+			$('#next-photos').html('');
+			$('#previous-photos').html('');
+			var passedCurrentPhoto = false;
+			var currentPhoto = $(this).attr('title');
+			$('#nomis-property-photos-carousel a').each(function()
+			{
+				console.log('title: ' + $(this).attr('title'));
+				console.log('currentPhoto: ' + currentPhoto);
+				if (($(this).attr('title') != currentPhoto) && (passedCurrentPhoto == false))
+				{
+					$('#previous-photos').append('<a href="' + $(this).attr('title') + '" rel="fancybox"></a>');
+				}
+				if ($(this).attr('title') == currentPhoto)
+				{
+					passedCurrentPhoto = true;
+				}
+				if (($(this).attr('title') != currentPhoto) && (passedCurrentPhoto == true))
+				{
+					$('#next-photos').append('<a href="' + $(this).attr('title') + '" rel="fancybox"></a>');
+				}
+				$('a[rel="fancybox"]').fancybox({
+					autoDimensions: false
+				});
+			});
+
+			return false;
+		});
+	};
+</script>
+<?php endif; ?>

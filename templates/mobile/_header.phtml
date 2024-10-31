@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+
+		<title><?php echo get_bloginfo('name'); ?></title>
+
+		<link href="<?php echo WP_PLUGIN_URL; ?>/nomis/stylesheets/nomis-mobile.css" rel="stylesheet" type="text/css" />
+
+		<?php $customStylesheet = get_bloginfo('template_url') . '/nomis-mobile-custom.css';
+		if (@fopen($customStylesheet, 'r')): ?>
+			<link href="<?php echo $customStylesheet; ?>" rel="stylesheet" type="text/css" />
+		<?php endif; ?>
+
+		<script type="text/javascript" src="http://static.annommx.com/javascript/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/nomis/javascript/jquery.lazyload.js"></script>
+		<script type="text/javascript">
+			$("img").lazyload(
+			{
+				placeholder : '<?php echo WP_PLUGIN_URL; ?>/nomis/images/loader.gif',
+				effect      : 'fadeIn'
+			});
+		</script>
+
+	</head>
+	<body>
+
+		<div id="header">
+			<h1><?php echo get_bloginfo('name'); ?></h1>
+			<ul id="nomis-mobile-language-select">
+				<?php if ($_GET['lang'] != 'nl'): ?>
+				<li class="nl"><a href="?lang=nl">NL</a></li>
+				<?php endif; if ($_GET['lang'] != 'en'): ?>
+				<li class="en"><a href="?lang=en">EN</a></li>
+				<?php endif; ?>
+			</ul>
+		</div>

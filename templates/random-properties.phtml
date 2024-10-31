@@ -1,0 +1,55 @@
+<ul id="nomis-random-properties">
+	<?php $i = 1; foreach ($this->_data['result'] as $house):
+		$title = $this->html($house['city'] . ', ' . $house['street']);
+		$link = trim(get_bloginfo('url'), '/') . (function_exists('qtrans_getLanguage') ? '/' . qtrans_getLanguage() : '' ) . '/property' . (defined('ICL_LANGUAGE_CODE') ? '-' . ICL_LANGUAGE_CODE : '') . '/' . $this->seo($house['city']) . '/' . $this->seo($house['street']) . '/' . $house['id'] . '/';
+	?>
+	<li class="<?php
+		echo $i == 1 ? 'first ' : '';
+		echo $i % 2 == 0 ? 'even ' : 'odd ';
+		echo $i == count($this->_data['result']) ? 'last ' : '';
+		echo $house['forsale'] == '1' ? 'sale ' : 'rent ';
+		$propertyStatusEnum = include dirname(__FILE__) . '/../arrays/property-status.array.php';
+		echo $propertyStatusEnum[$house['forrent_front_status']] . ' ';
+		if (!in_array($house['forrent_front_status'], array(436, 442, 443, 444)))
+		{
+			echo strtotime($house['available_at']) < time() ? 'available ' : 'unavailable ';
+		}
+		if (!in_array($house['forrent_front_status'], array(437)))
+		{
+			echo strtotime($house['registration_date']) > time() - 5184000 ? 'new ' : ''; //houses that have been added in the last two months are new, 5184000 = 60*60*24*30*2
+		}
+		?>">
+
+		<?php if (!empty($house['forrent_front_status']) && $house['forrent_front_status'] != 1): ?>
+		<div class="status">
+			<?php echo __(ucfirst(str_replace('-', ' ', $propertyStatusEnum[$house['forrent_front_status']])), 'nomis'); ?>
+		</div>
+		<?php endif; ?>
+
+		<?php if (get_option('nomis_random_properties_photo') == '1'): ?>
+		<div class="photo">
+			<a href="<?php echo $link; ?>">
+				<span class="image-holder"<?php if (!empty($house['photos'][0]['small'])) echo ' style="background-image:url(' . $house['photos'][0]['small'] . ');"'; ?>></span>
+			</a>
+		</div>
+		<?php endif; ?>
+		
+		<div class="info">
+			<?php if (get_option('nomis_random_properties_title') == '1'): ?>
+			<h3>
+				<a title="<?php echo $title; ?>" href="<?php echo $link; ?>">
+					<?php echo $title; ?>
+				</a>
+			</h3>
+			<?php endif; ?>
+			<div class="details">
+				<?php nomisDetails($house, get_option('nomis_random_properties_details')); ?>
+			</div>
+			<?php if (get_option('nomis_random_properties_link') == '1'): ?>
+			<a class="view" href="<?php echo $link; ?>"><?php echo __('View property', 'nomis'); ?></a>
+			<?php endif; ?>
+		</div>
+		<div class="clear"></div>
+	</li>
+	<?php $i ++; endforeach; ?>
+</ul>

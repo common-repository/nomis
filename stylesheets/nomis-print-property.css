@@ -1,0 +1,53 @@
+body {
+	font-family:arial, verdana, sans-serif;
+	font-size:12pt;
+}
+
+#content {
+	width:auto;
+}
+
+.clear {
+	clear:both;
+}
+
+.details .item {
+	width:50%;
+	float:left;
+}
+
+.details .key {
+	font-weight:bold;
+	width:40%;
+	float:left;
+}
+
+.details .value {
+	width:60%;
+	float:left;
+}
+
+.details p {
+	margin:0;
+}
+
+.description {
+	margin:1em 0;
+}
+
+.photos img {
+	float:left;
+	margin:0 10px 10px 0;
+}
+
+#map {
+	height:300px;
+}
+
+.logo {
+	float:right;
+}
+
+.broker-info {
+	float:left;
+}

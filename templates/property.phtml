@@ -1,0 +1,25 @@
+<?php
+$house = $this->_data['property'];
+$title = $this->html($house['street'] . ', ' . $house['city']);
+?>
+
+<div id="nomis-property">
+
+	<?php
+	switch (get_option('nomis_property_layout'))
+	{
+		case '2':
+			include '_property_layout_2.phtml';
+			break;
+
+		case '3':
+			include '_property_layout_3.phtml';
+			break;
+
+		default:
+			include '_property_layout_1.phtml';
+			break;
+	}
+	?>
+	
+</div>

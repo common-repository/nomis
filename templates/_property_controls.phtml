@@ -1,0 +1,219 @@
+
+	<?php if (get_option('nomis_property_back') == '1' ||
+			  get_option('nomis_property_contact') == '1' ||
+			  get_option('nomis_property_addthis') == '1' ||
+			  get_option('nomis_property_mailtofriend') == '1' ||
+			  get_option('nomis_property_print') == '1'): ?>
+	<div class="controls">
+		<script type="text/javascript">
+			function isValidEmailAddress(emailAddress)
+			{
+				var pattern = new RegExp(/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/);
+				return pattern.test(emailAddress);
+			}
+		</script>
+		<ul>
+			<?php if (get_option('nomis_property_back') == '1'): ?>
+			<li class="back">
+				<a href="javascript:history.back();"><?php _e('Back to search results', 'nomis'); ?></a>
+			</li>
+			<?php endif; ?>
+			<?php if (get_option('nomis_property_contact') == '1'): ?>
+			<li class="contact">
+				<a href="#contact-about-house-form" id="contact-about-house"><?php _e('Contact us about this house', 'nomis'); ?></a>
+				<div style="display:none;">
+					<div id="contact-about-house-form">
+						<form method="post" action="javascript:;">
+							<h3><?php _e('Contact us about this house', 'nomis'); ?></h3>
+							<p class="nomis-fancybox-response" id="contact-about-house-response"></p>
+							<dl>
+								<dt><?php _e('Name', 'nomis'); ?> *</dt>
+								<dd><input type="text" name="name" id="contact-about-house-name" /></dd>
+								<dt><?php _e('Email', 'nomis'); ?> *</dt>
+								<dd><input type="text" name="email" id="contact-about-house-email" /></dd>
+								<dt><?php _e('Telephonenumber', 'nomis'); ?></dt>
+								<dd><input type="text" name="telephone" id="contact-about-house-telephone" /></dd>
+								<dt><?php _e('Message', 'nomis'); ?></dt>
+								<dd><textarea name="message" cols="50" rows="7" id="contact-about-house-message"></textarea></dd>
+								<dt>&nbsp;</dt>
+								<dd><input type="submit" value="<?php _e('Send'); ?>" name="mailtofriend" class="submit" id="contact-about-house-submit" /></dd>
+							</dl>
+							<span><?php _e('Fields with a * are required', 'nomis'); ?></span>
+						</form>
+					</div>
+					<script type="text/javascript">
+						$(document).ready(function()
+						{
+							$("a#contact-about-house").fancybox({
+								'autoDimensions' : true/*,
+								'onClosed': function(){
+									parent.location.reload();
+								}*/
+							});
+
+							$('#contact-about-house-submit').click(function()
+							{
+								var error = '';
+
+								if ($('#contact-about-house-name').val() == '')
+								{
+									error += '<?php _e('Please enter your name.', 'nomis'); ?> ';
+								}
+
+								if (!isValidEmailAddress($('#contact-about-house-email').val()))
+								{
+									error += '<?php _e('Please enter a valid emailaddress.', 'nomis'); ?> ';
+								}
+
+								if (error != '')
+								{
+									$('#contact-about-house-response').html(error);
+								}
+								else
+								{
+									var datastr =
+										'&name=' + $('#contact-about-house-name').val() +
+										'&email=' + $('#contact-about-house-email').val() +
+										'&telephone=' + $('#contact-about-house-telephone').val() +
+										'&message=' + $('#contact-about-house-message').val() +
+										'&street=<?php echo $house['street']; ?>' +
+										'&id=<?php echo $house['id']; ?>' +
+										'&city=<?php echo $house['city']; ?>';
+
+									$.ajax(
+									{
+										type: 'POST',
+										url: '<?php echo WP_PLUGIN_URL . '/nomis/contact-about-house.php'; ?>',
+										data: datastr,
+										cache: false,
+										success: function(result)
+										{
+											$('#contact-about-house-form').html(result);
+										}
+									});
+								}
+
+								return false;
+							});
+						});
+					</script>
+				</div>
+			</li>
+			<?php endif; ?>
+			<?php if (get_option('nomis_property_addthis') == '1'): ?>
+			<li class="addthis">
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style ">
+					<a href="http://www.addthis.com/bookmark.php?v=250&amp;username=xa-4d0cce3f64bb55ab" class="addthis_button_compact">Share</a>
+					<span class="addthis_separator">|</span>
+					<a class="addthis_button_preferred_1"></a>
+					<a class="addthis_button_preferred_2"></a>
+					<a class="addthis_button_preferred_3"></a>
+					<a class="addthis_button_preferred_4"></a>
+				</div>
+				<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4d0cce3f64bb55ab"></script>
+				<!-- AddThis Button END -->
+			</li>
+			<?php endif; ?>
+			<?php if (get_option('nomis_property_mailtofriend') == '1'): ?>
+			<li class="mailtofriend">
+				<a href="#mail-to-friend" id="mail-to-friend-open"><?php _e('Mail to friend', 'nomis'); ?></a>
+				<div style="display:none;">
+					<div id="mail-to-friend">
+						<h3><?php _e('Mail to a friend', 'nomis'); ?></h3>
+						<p id="mail-to-friend-response"></p>
+						<dl>
+							<dt><?php _e('Name sender', 'nomis'); ?> *</dt>
+							<dd><input type="text" id="mail-to-friend-name-sender" /></dd>
+							<dt><?php _e('Email sender', 'nomis'); ?> *</dt>
+							<dd><input type="text" id="mail-to-friend-email-sender" /></dd>
+							<dt><?php _e('Name recipient', 'nomis'); ?> *</dt>
+							<dd><input type="text" id="mail-to-friend-name-recipient" /></dd>
+							<dt><?php _e('Email recipient', 'nomis'); ?> *</dt>
+							<dd><input type="text" id="mail-to-friend-email-recipient" /></dd>
+							<dt><?php _e('Message', 'nomis'); ?></dt>
+							<dd><textarea cols="50" rows="7" id="mail-to-friend-message"></textarea></dd>
+							<dt>&nbsp;</dt>
+							<dd><input type="submit" value="<?php _e('Send', 'nomis'); ?>" class="submit" id="mail-to-friend-submit" /></dd>
+						</dl>
+						<span><?php _e('Fields with a * are required', 'nomis'); ?></span>
+					</div>
+				</div>
+				<script type="text/javascript">
+					$(document).ready(function()
+					{
+						$("a#mail-to-friend-open").fancybox({
+							'autoDimensions' : true/*,
+							'onClosed': function(){
+								parent.location.reload();
+							}*/
+						});
+
+						$('#mail-to-friend-submit').click(function()
+						{
+							var error = '';
+
+							if ($('#mail-to-friend-name-sender').val() == '')
+							{
+								error += '<?php _e('Please enter a senders name.', 'nomis'); ?> ';
+							}
+
+							if (!isValidEmailAddress($('#mail-to-friend-email-sender').val()))
+							{
+								error += '<?php _e('Please enter a valid emailaddress for the sender.', 'nomis'); ?> ';
+							}
+
+							if ($('#mail-to-friend-name-recipient').val() == '')
+							{
+								error += '<?php _e('Please enter a recipients name.', 'nomis'); ?> ';
+							}
+
+							if (!isValidEmailAddress($('#mail-to-friend-email-recipient').val()))
+							{
+								error += '<?php _e('Please enter a valid emailaddress for the recipient.', 'nomis'); ?> ';
+							}
+
+							if (error != '')
+							{
+								$('#mail-to-friend-response').html(error);
+							}
+							else
+							{
+								var datastr =
+									'&name-sender=' + $('#mail-to-friend-name-sender').val() +
+									'&email-sender=' + $('#mail-to-friend-email-sender').val() +
+									'&name-recipient=' + $('#mail-to-friend-name-recipient').val() +
+									'&email-recipient=' + $('#mail-to-friend-email-recipient').val() +
+									'&message=' + $('#mail-to-friend-message').val() +
+									'&street=<?php echo $house['street']; ?>' +
+									'&city=<?php echo $house['city']; ?>' +
+									'&link=<?php echo get_home_url() . '/property/' . $this->html($house['city'] . '/' . $house['street']) . '/' . $house['id']; ?>';
+
+								$.ajax(
+								{
+									type: 'POST',
+									url: '<?php echo WP_PLUGIN_URL . '/nomis/mail-to-friend.php'; ?>',
+									data: datastr,
+									cache: false,
+									success: function(result)
+									{
+										$('#mail-to-friend').html(result);
+									}
+								});
+							}
+
+							return false;
+						});
+					});
+				</script>
+			</li>
+			<?php endif; ?>
+			<?php if (get_option('nomis_property_print') == '1'): ?>
+			<li class="print">
+				<a href="?print-property=true&amp;id=<?php echo $house['id']; ?>"><?php _e('Print'); ?></a>
+			</li>
+			<?php endif; ?>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<?php endif; ?>

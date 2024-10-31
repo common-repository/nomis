@@ -1,0 +1,82 @@
+<?php
+if (!isset($options['type'])) $options['type'] = 'text';
+
+if ($name == 'last_name_prefix') : ?>
+	<input type="hidden" name="<?php echo $name; ?>" value="" />
+
+<?php elseif ($name == 'message' || $options['type'] == 'textarea'): ?>
+
+	<dt class="<?php echo $options['type']; ?>">
+		<label for="<?php echo $name; ?>">
+			<?php echo $this->html(nomisTranslateForm($label)); ?>:<?php
+			if (!empty($options['required'])) echo ' *'; ?>
+		</label>
+	</dt>
+	<dd class="<?php echo $options['type']; ?>">
+		<textarea rows="4" name="<?php echo $name; ?>"></textarea>
+	</dd>
+
+<?php else : ?>
+
+	<dt class="<?php echo $options['type']; ?>"><label for="<?php echo $name; ?>"><?php echo $this->html(nomisTranslateForm($label)); ?>:<?php
+	if (!empty($options['required'])) echo ' *'; ?></label></dt>
+	<dd class="<?php echo $options['type']; ?>">
+
+	<?php if (!empty($options['type']) && $options['type'] == 'select') : ?>
+
+		<?php
+		if (strpos('::', $name))
+		{
+			list($name, $tmp) = explode('::', $name);
+			unset($tmp);
+		}
+		?>
+
+		<select name="<?php echo $name; ?>" id="<?php echo $name; ?>"<?php if (!empty($options['required'])) echo ' class="required"'; ?>>
+			<?php if (!isset($options['options'][''])): ?>
+				<option value=""></option>
+			<?php endif; ?>
+			<?php foreach ($options['options'] as $index => $value): ?>
+			<option value="<?php echo $this->html($index); ?>"><?php echo nomisTranslateForm($value); ?></option>
+			<?php endforeach; ?>
+		</select>
+
+	<?php elseif ($options['type'] == 'checkbox'): ?>
+
+		<input type="checkbox" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="1"<?php if (!empty($options['required'])) echo ' class="required"'; if (isset($_POST[$name]) && $_POST[$name] == '1') echo ' checked="checked"'; ?> />
+
+	<?php else: ?>
+
+		<input type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="<?php echo $this->html(@$info['value']); ?>"<?php if (!empty($options['required'])) echo ' class="required"'; ?> />
+
+	<?php endif;
+
+	if (isset($options['description']))
+	{
+		//$options['description'] = '[:nl]nederlands %sanker%s[:en]english %sanchor%s||<a href="nederlandse-pagina">|</a>|<a href="english-page">|</a>';
+		if (strpos($options['description'], '%s'))
+		{
+			$parts = explode('||', $options['description']);
+
+			echo __(call_user_func_array('sprintf', array_merge(array(
+				$this->html($parts[0])
+			), explode('|', $parts[1]))));
+		}
+		else
+		{
+			echo __($options['description']);
+		}
+
+		if (!empty($info['errors']))
+		{
+			$info['errors'] = (array) $info['errors'];
+			foreach ($info['errors'] as $message)
+			{
+				echo '<span class="message error">' . $this->html($message) . '</span>';
+			}
+		}
+	}
+
+	echo '</dd>';
+
+endif;

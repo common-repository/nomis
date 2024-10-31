@@ -1,0 +1,104 @@
+<div id="nomis-property-3">
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('#nomis-property-3').tabs({
+				show: function (event, ui)
+				{
+					if (ui.panel.id == 'maps')
+					{
+						showMaps();
+					}
+					if (ui.panel.id == 'streetview')
+					{
+						showStreetview();
+					}
+					if (ui.panel.id == 'photos')
+					{
+						showPhotoCarousel();
+					}
+				}
+			});
+		});
+	</script>
+	<ul id="tabs-nav">
+		<li><a href="#description"><?php _e('Description', 'nomis'); ?></a></li>
+		<li><a href="#details"><?php _e('Details', 'nomis'); ?></a></li>
+		<li><a href="#photos"><?php _e('Photos', 'nomis'); ?></a></li>
+		<?php if (get_option('nomis_property_googlemaps') == '1'): ?>
+		<li><a href="#maps"><?php _e('Map', 'nomis'); ?></a></li>
+		<?php endif; if (get_option('nomis_property_streetview') == '1'): ?>
+		<li><a href="#streetview"><?php _e('Streetview', 'nomis'); ?></a></li>
+		<?php endif; ?>
+	</ul>
+
+	<div id="description">
+		<?php include '_property_description.phtml'; ?>
+	</div>
+
+	<div id="details">
+		<?php include '_property_details.phtml'; ?>
+	</div>
+
+	<div id="photos">
+		<?php include '_property_photos_2.phtml'; ?>
+	</div>
+
+	<?php if (get_option('nomis_property_googlemaps') == '1'): ?>
+	<div id="maps">
+		<div id="nomis-maps-holder" data-lat="<?php echo $house['lat']; ?>" data-lng="<?php echo $house['lng']; ?>" data-title="<?php echo $title; ?>">&nbsp;</div>
+		<script type="text/javascript">
+			function showMaps()
+			{
+				if (!$('#nomis-maps-holder').hasClass('activated'))
+				{
+					latLng = new google.maps.LatLng($('#nomis-maps-holder').data('lat'), $('#nomis-maps-holder').data('lng'));
+					var mapsOptions = {
+						center: latLng,
+						zoom: 13,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+					map = new google.maps.Map($('#nomis-maps-holder')[0], mapsOptions);
+					new google.maps.Marker({
+						position: latLng,
+						map: map,
+						title: $('#nomis-maps-holder').data('title')
+					});
+					$('#nomis-maps-holder').addClass('activated');
+				}
+			};
+		</script>
+	</div>
+	<?php endif; ?>
+
+	<?php if (get_option('nomis_property_streetview') == '1'): ?>
+	<div id="streetview">
+		<div id="nomis-streetview-holder" data-lat="<?php echo $house['lat']; ?>" data-lng="<?php echo $house['lng']; ?>">&nbsp;</div>
+		<script type="text/javascript">
+			$()
+			function showStreetview()
+			{
+				if (!$('#nomis-streetview-holder').hasClass('activated'))
+				{
+					var streetviewOptions = {
+						position: new google.maps.LatLng($('#nomis-streetview-holder').data('lat'), $('#nomis-streetview-holder').data('lng')),
+						pov: {
+							heading: 0,
+							pitch: 0,
+							zoom: 0
+						}
+					};
+					new google.maps.StreetViewPanorama($('#nomis-streetview-holder')[0], streetviewOptions);
+					$('#nomis-streetview-holder').addClass('activated');
+				}				
+			};
+		</script>
+	</div>
+	<?php endif; ?>
+
+	<?php
+	if (get_option('nomis_property_streetview') == '1'
+	 || get_option('nomis_property_maps') == '1'): ?>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<?php endif; ?>
+</div>

@@ -1,0 +1,47 @@
+
+<?php if (!empty($data['request']['success'])) : ?>
+	<p>You made it!</p>
+<?php else : ?>
+
+
+<?php if (@$data['request']['error'] == true) : ?>
+	<p>Error occurred</p>
+<?php endif; ?>
+
+
+<form action="index.php?action=request&amp;lang=<?php echo $_GET['lang']; ?>&amp;<?php echo http_build_query($data['search']['search'], '', '&amp;'); ?>&amp;id=<?php echo $data['property']['id']; ?>" method="post">
+	<dl>
+		<?php foreach ($data['request']['form'] as $name => $info)
+		{
+			echo $this->formText($name,
+				@$info['info'],
+				@$info['options']);
+		}?>
+		
+		<dt>&nbsp;</dt>
+		<dd><input type="submit" name="add_request" value="Send" /></dd>
+	</dl>
+</form>
+
+<?php endif; ?>
+
+
+<?php if ($data['property'] !== null) : ?>
+<p>
+	<a href="index.php?action=property&amp;<?php echo http_build_query($data['search']['search'], '', '&amp;'); ?>&amp;id=<?php echo $data['property']['id']; ?>">Back to property</a>
+</p>
+
+<?php endif; ?>
+
+<p>
+	<a href="index.php?action=search&amp;<?php echo http_build_query($data['search']['search'], '', '&amp;'); ?>">Search</a>
+</p>
+
+<script type="text/javascript" src="http://static.annommx.com/min/javascript/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="http://static.annommx.com/min/javascript/jquery.maskedinput.js"></script>
+<script type="text/javascript">
+jQuery(function($)
+{
+	$('#commencing_date').mask('99-99-9999');
+}(jQuery));
+</script>

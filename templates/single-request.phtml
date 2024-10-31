@@ -1,0 +1,26 @@
+<div id="nomis-request" class="nomis-form">
+
+	<?php if (!empty($data['success'])) : ?>
+	<p class="success"><?php _e('You successfully contacted us, we\'ll get back to you as soon as possible!', 'nomis'); ?></p>
+	<?php else : ?>
+
+	<?php if (@$data['error'] == true) : ?>
+	<p class="error"><?php _e('Error occurred, please review.', 'nomis'); ?></p>
+	<?php endif; ?>
+
+	<form action="" method="post">
+		<dl>
+			<?php foreach ($data['form'] as $name => $info)
+			{
+				echo $this->formText($name,
+					@$info['info'],
+					@$info['options']);
+			}?>
+			<dt>&nbsp;</dt>
+			<dd><input type="submit" value="<?php echo __('Send', 'nomis'); ?>" name="add_single_request" class="submit" /></dd>
+		</dl>
+	</form>
+
+	<?php endif; ?>
+
+</div>

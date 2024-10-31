@@ -1,0 +1,18 @@
+<div class="details">
+	<?php
+	if ($house['division'] == 'bog')
+	{
+		nomisGroupDetails($house, get_option('nomis_property_bog_details'));
+	}
+	elseif (get_option('nomis_property_different_sale_details') == '1'
+	 && !empty($house['forsale_price']))
+	{
+		nomisGroupDetails($house, get_option('nomis_property_sale_details'));
+	}
+	else
+	{
+		nomisDetails($house, get_option('nomis_property_details'));
+	}
+	?>
+	<div class="clear"></div>
+</div>

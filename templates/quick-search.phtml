@@ -1,0 +1,62 @@
+<?php
+
+if (function_exists('wpml_link_to_element'))
+{
+	preg_match('/<a href=\"([^\"]*)\">(.*)<\/*a>/iU', wpml_link_to_element((int) get_option('nomis_quick_search_action'), 'page', '', array(), '', false), $rs);
+	$action = $rs[1];
+}
+else
+{
+	$action = get_page_link((int) get_option('nomis_quick_search_action'));
+}
+
+?>
+
+
+<form method="get" action="<?php echo $action; ?>" id="nomis-quick-search"<?php if (get_option('nomis_quick_search_display_labels') == '1'): ?> class="with-labels"<?php endif; ?>>
+
+	<?php
+	$searchCriteria = get_option('nomis_quick_search_criteria');
+	nomisSearch($searchCriteria, $data, 'quick', $this->getAllCities(), $this->getAllDistricts(), $this->getAllHouseTypes(), $this->getAllCountries());
+	?>
+
+	<div class="submit">
+		<input type="submit" class="search_button" value="<?php echo _e('Search', 'nomis'); ?>" title="<?php _e('Search', 'nomis'); ?>" />
+	</div>
+	<?php if (isset($searchCriteria['forsale']) && $searchCriteria['forsale'] == 1): ?>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('input[name="for-sale"]').change(function()
+			{
+				if ($(this).val() == '1')
+				{
+					$('.criterium.min-price').hide();
+					$('.criterium.min-price select').val('');
+					$('.criterium.max-price').hide();
+					$('.criterium.max-price select').val('');
+
+					$('.criterium.forsale-min-price').show();
+					$('.criterium.forsale-max-price').show();
+				}
+				else if ($(this).val() == '0')
+				{
+					$('.criterium.forsale-min-price').hide();
+					$('.criterium.forsale-min-price select').val('');
+					$('.criterium.forsale-max-price').hide();
+					$('.criterium.forsale-max-price select').val('');
+
+					$('.criterium.min-price').show();
+					$('.criterium.max-price').show();
+				}
+			});
+
+			// init
+			$('input#for-sale-0').attr('checked', true);
+			$('.criterium.forsale-min-price').hide();
+			$('.criterium.forsale-max-price').hide();
+		});
+	</script>
+	<?php endif; ?>
+	
+</form>

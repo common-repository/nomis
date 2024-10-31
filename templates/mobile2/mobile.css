@@ -1,0 +1,71 @@
+#width {
+	width: 100%;
+	height: 1px;
+}
+
+.broker-logo {
+	background: #fff;
+	text-align: center;
+}
+
+.nomis-photos-wrapper {
+	width: 100%;
+	overflow: hidden;
+	height: 100px;
+	position: relative;
+}
+
+.nomis-photos {
+	white-space: nowrap;
+	margin: 0;
+	width: 100%;
+	height: 100px;
+	padding: 0;
+}
+
+.nomis-photos li {
+	width: 100px;
+	height: 100px;
+	float: left;
+	list-style: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+	background-repeat: no-repeat;
+	margin-right: 5px;
+}
+
+.nomis-photos li a {
+	display: block;
+	height: 100px;
+	width: 100px;
+	background-repeat: no-repeat;
+	margin-right: 5px;
+	text-decoration: none;
+}
+
+.nomis-photos img {
+	width: 100px;
+}
+
+.nomis-photos-wrapper .arrow {
+	position: absolute;
+	top: 0;
+	width: 20px;
+	background: rgba(0, 0, 0, 0.7);
+	height: 100%;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.nomis-photos-wrapper .arrow.next {
+	right: 0;
+}
+
+.nomis-photos-wrapper .arrow.prev {
+	left: 0;
+}
+
+.hide {
+	display: none;
+}

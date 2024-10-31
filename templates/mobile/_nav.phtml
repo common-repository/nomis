@@ -1,0 +1,31 @@
+<?php
+/*
+if (isset($data['search']))
+{
+	$propertiesLink = get_bloginfo('url') . '/?a=properties&amp;' . http_build_query($data['search'], '', '&amp;');
+}
+else
+{
+	$propertiesLink = get_bloginfo('url') . '/?a=properties';
+}
+ *
+ */
+$a = isset($_GET['a']) ? $_GET['a'] : 'index';
+$lang = preg_replace('~[^a-zA-Z_]~', '', $_GET['lang']);
+?>
+<div class="actions">
+	<?php if ($a != 'index'): ?>
+	<a href="<?php echo get_bloginfo('url') . '/?lang=' . $lang; ?>" class="button"><?php echo nomisTrMobile('Search'); ?></a>
+	<?php
+	endif;
+	if ($a != 'properties'):
+	?>
+	<a href="<?php echo get_bloginfo('url') . '/?a=properties&amp;lang=' . $lang; ?>" class="button"><?php echo nomisTrMobile('Propertylist'); ?></a>
+	<?php
+	endif;
+	if ($a != 'map'):
+	?>
+	<a href="<?php echo get_bloginfo('url') . '/?a=map&amp;lang=' . $lang; ?>" class="button"><?php echo nomisTrMobile('Map'); ?></a>
+	<?php endif; ?>
+	<div class="clear"></div>
+</div>

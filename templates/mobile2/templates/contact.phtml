@@ -1,0 +1,48 @@
+<?php
+global $api;
+
+$api->setPropertiesPerPage(1);
+$api->setRenderMode(false);
+$tmpData = $api->run(array(
+	'action' => 'search',
+));
+
+$cur = current($tmpData['result']);
+
+if (!empty($cur))
+{
+//	var_dump($cur['broker'][0]);return;
+	echo '<p style="text-align: center;">
+		' . $this->html($cur['broker'][0]['name']) . '<br>
+		' . nl2br($this->html($cur['broker'][0]['address'])) . '<br>
+		Tel: ' . $this->html($cur['broker'][0]['telephone']) . '<br>
+		Email: <a href="mailto:' . $this->html($cur['broker'][0]['emailaddress']) . '">' . $this->html($cur['broker'][0]['emailaddress']) . '</a>
+	</p>';
+}
+
+if (!empty($data['contact']['success'])) : ?>
+	<p><?php echo __('Thanks for your contact request, we will be in touch with you as soon as possible!', 'nomis'); ?></p>
+<?php else : ?>
+
+
+<?php if (@$data['contact']['error'] == true) : ?>
+	<p><?php echo __('We apologize for the inconvenience, but something went wrong. Please try to contact us in another way.', 'nomis'); ?></p>
+<?php endif; ?>
+
+<div data-role="collapsible" data-collapsed="<?php echo $_SERVER['REQUEST_METHOD'] == 'POST' ? 'false' : 'true'; ?>">
+	<h3><?php echo __('Get in touch', 'nomis'); ?></h3>
+	<form action="index.php?action=contact&amp;lang=<?php echo $_GET['lang']; ?>" method="post">
+		<div data-role="fieldcontain">
+			<?php foreach ($data['contact']['form'] as $name => $info)
+			{
+				echo $this->formText($name,
+					@$info['info'],
+					@$info['options']);
+			}?>
+
+			<input type="submit" name="add_contact" value="<?php echo __('Send' ,'nomis'); ?>" data-theme="a">
+		</div>
+	</form>
+</div>
+
+<?php endif;

@@ -1,0 +1,26 @@
+<div id="nomis-contactform" class="nomis-form">
+
+	<?php if (!empty($data['contact']['success'])) : ?>
+	<p class="success"><?php _e('You successfully contacted us, we\'ll get back to you as soon as possible!', 'nomis'); ?></p>
+	<?php else : ?>
+
+	<?php if (@$data['contact']['error'] == true) : ?>
+	<p class="error"><?php _e('Error occurred, please review.', 'nomis'); ?></p>
+	<?php endif; ?>
+
+	<form action="" method="post">
+		<dl>
+			<?php foreach ($data['contact']['form'] as $name => $info)
+			{
+				echo $this->formText($name,
+					@$info['info'],
+					@$info['options']);
+			}?>
+			<dt>&nbsp;</dt>
+			<dd><input type="submit" value="<?php echo __('Send', 'nomis'); ?>" name="add_contact" class="submit" /></dd>
+		</dl>
+	</form>
+
+	<?php endif; ?>
+
+</div>

@@ -1,0 +1,59 @@
+
+		
+
+<h2><?php echo $this->html($data['property']['street']); ?></h2>
+	
+
+<div data-role="collapsible-set">
+	<div data-role="collapsible">
+		<h3><?php echo __('Basic information', 'nomis'); ?></h3>
+
+		<p>
+			<strong><?php echo __('Street', 'nomis'); ?></strong>: <?php echo $this->html($data['property']['street']); ?><br>
+			<strong><?php echo __('City', 'nomis'); ?></strong>: <?php echo $this->html($data['property']['city']); ?><br>
+			<strong><?php echo __('Interior', 'nomis'); ?></strong>: <?php echo $this->html(__($data['property']['interior'], 'nomis')); ?><br>
+			<strong><?php echo __('Bedrooms', 'nomis'); ?></strong>: <?php echo $this->html($data['property']['bedrooms']); ?><br>
+			<strong><?php echo __('Price', 'nomis'); ?></strong>: €<?php echo number_format($data['property']['price']); ?>
+		</p>
+	</div>
+
+	<?php if (!empty($data['property']['photos'])) : ?>
+	<div data-role="collapsible" data-collapsed="true">
+		<h3><?php echo __('Photos', 'nomis'); ?></h3>
+		<div class="nomis-photos-wrapper">
+			<ul class="nomis-photos">
+				<?php foreach ($data['property']['photos'] as $p) : ?>
+				<li style="background-image: url(<?php echo $p['small']; ?>);"></li>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+		<br style="clear: left;">
+	</div>
+	<?php endif; ?>
+
+	<?php if (!empty($data['property']['lat'])) : ?>
+	<div data-role="collapsible" data-collapsed="true" id="maps-holder-<?php echo $data['property']['id']; ?>">
+		<h3><?php echo __('Maps', 'nomis'); ?></h3>
+		<p>
+			<script type="text/javascript">
+				$(function(){
+					var holder = $('#maps-holder-<?php echo $data['property']['id']; ?> p').addClass('loaded');
+					var url = 'http://maps.google.com/maps/api/staticmap?center=<?php echo $data['property']['lat']; ?>,<?php echo $data['property']['lng']; ?>&zoom=13&size=' + _WIDTH + 'x200&markers=color:blue|label:A|<?php echo $data['property']['lat']; ?>,<?php echo $data['property']['lng']; ?>&sensor=false';
+					var img = new Image;
+					img.src = url;
+					
+					$(img).load(function()
+					{
+						holder.width(img.width).height(img.height).css({
+							background: 'url(' + url + ')'
+						});
+					});
+//					$('<img src="" alt="">').appendTo($('#maps-holder-<?php echo $data['property']['id']; ?> p.loaded'));
+				});
+			</script>
+		</p>
+	</div>
+	<?php endif; ?>
+	
+	<a href="index.php?action=add-single-request&amp;lang=<?php echo $_GET['lang']; ?>&amp;<?php echo http_build_query($data['search']['search']); ?>&amp;id=<?php echo $data['property']['id']; ?>" data-role="button" data-rel="dialog" data-transition="pop"><?php echo __('Contact us about this house', 'nomis'); ?></a>
+</div>

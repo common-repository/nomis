@@ -1,0 +1,14 @@
+<?php if (isset($house['photos'][0])): ?>
+<div class="photos">
+	<ul>
+		<?php foreach ($house['photos'] as $photo): ?>
+		<li>
+			<a href="<?php echo $photo['huge']; ?>" title="<?php echo $title; ?>" rel="fancybox">
+				<img src="<?php echo $photo['small']; ?>" alt="<?php echo $title; ?>" />
+			</a>
+		</li>
+		<?php endforeach; ?>
+	</ul>
+	<div class="clear"></div>
+</div>
+<?php endif; ?>

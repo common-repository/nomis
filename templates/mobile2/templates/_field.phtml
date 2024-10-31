@@ -1,0 +1,34 @@
+<!--<dt><label for="<?php echo $name; ?>"><?php echo $this->html($label); ?><?php
+if (!empty($options['required'])) echo ' *'; ?></label></dt>
+<dd>-->
+
+
+<?php if (!empty($options['type']) && $options['type'] == 'select') : ?>
+	<select name="<?php echo $name; ?>" id="<?php echo $name; ?>"<?php
+if (!empty($options['required'])) echo ' class="required" required="required"'; ?> data-native-menu="false">
+	<option value=""><?php echo $this->html(__($label, 'nomis')); ?></option><?php
+	foreach ($options['options'] as $index => $value) : ?>
+		<option value="<?php echo $this->html($index); ?>"><?php echo $this->html(__($value, 'nomis')); ?></option>
+		<?php endforeach; ?>
+	</select>
+	<?php else : ?>
+<input type="text" name="<?php echo $name; ?>" id="<?php echo $name; ?>" value="<?php echo $this->html(@$info['value']); ?>"<?php
+if (!empty($options['required'])) echo ' class="required" required="required"'; ?> placeholder="<?php echo $this->html(__($label, 'nomis')); ?>" /><?php
+
+endif;
+
+if (!empty($options['description']))
+{
+	echo '<br><span class="message">' . $this->html(__($options['description'], 'nomis')) . '</span><br>';
+}
+
+if (!empty($info['errors']))
+{
+	$info['errors'] = (array) $info['errors'];
+	foreach ($info['errors'] as $message)
+	{
+		echo '<br><span class="message error">' . $this->html(__($message, 'nomis')) . '</span><br>';
+	}
+}
+
+//echo '</dd>';

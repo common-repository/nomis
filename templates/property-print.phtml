@@ -1,0 +1,65 @@
+<?php
+$house = $this->_data['property'];
+$title = $this->html($house['street'] . ', ' . $house['city']);
+
+?>
+<html>
+	<head>
+		<title><?php echo $title; ?></title>
+		<link type="text/css" rel="stylesheet" href="<?php echo WP_PLUGIN_URL; ?>/nomis/stylesheets/nomis-print-property.css" />
+	</head>
+	<body onload="javascript:window.print();">
+
+		<div id="content">
+
+			<h1><?php echo $title; ?></h1>
+
+			<?php include '_property_details.phtml'; ?>
+			<div class="clear"></div>
+			<?php include '_property_description.phtml'; ?>
+			<div class="clear"></div>
+
+			<div class="photos">
+				<?php foreach ($house['photos'] as $photo): ?>
+				<img src="<?php echo $photo['big']; ?>" alt="<?php echo $title; ?>" />
+				<?php endforeach; ?>
+			</div>
+
+			<div class="clear"></div>
+
+			<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+			<div id="map"></div>
+			<script type="text/javascript">
+			var myLocation = new google.maps.LatLng(<?php echo $house['lat'] . ', ' . $house['lng']; ?>);
+			var myOptions = {
+				zoom: 9,
+				center: myLocation,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+
+			var map = new google.maps.Map(document.getElementById('map'), myOptions);
+			var marker = new google.maps.Marker({
+				position: myLocation,
+				map: map
+			});
+			</script>
+
+			<div class="broker-info">
+				<h1><?php echo $house['broker'][0]['name']; ?></h1>
+
+				<p>
+					<?php echo $house['broker'][0]['telephone']; ?><br />
+					<?php echo $house['broker'][0]['emailaddress']; ?>
+				</p>
+				<p>
+					<?php echo nl2br($this->html($house['broker'][0]['address'])); ?>
+				</p>
+			</div>
+			
+			<img class="logo" src="<?php echo $house['broker'][0]['logo']; ?>" alt="<?php echo $house['broker'][0]['name']; ?>" />
+
+
+		</div>
+
+	</body>
+</html>

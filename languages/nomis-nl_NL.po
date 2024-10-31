@@ -1,0 +1,1528 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Nomis Wordpress Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-11-28 18:07+0100\n"
+"PO-Revision-Date: 2011-11-28 18:11+0100\n"
+"Last-Translator: fuiviwehgyh <vfyvysf#@cdij.com>\n"
+"Language-Team: Anno MMX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: D:\\Websites\\Server\\annommx\\plugin-testing\\wp-content\\plugins\\nomis\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: templates\n"
+
+#: contact-about-house.php:19
+msgid "Thanks for your contact request, we will be in touch with you as soon as possible!"
+msgstr "Bedankt voor uw bericht, we nemen zo snel mogelijk contact met u op!"
+
+#: contact-about-house.php:20
+#: mail-to-friend.php:28
+#: mail-to-friend.php:35
+msgid "Close"
+msgstr "Sluiten"
+
+#: mail-to-friend.php:20
+msgid "thought you might be interested in this house"
+msgstr "dacht dat je misschien geinteresseerd zou zijn in de deze woning"
+
+#: mail-to-friend.php:21
+msgid "Dear"
+msgstr "Beste"
+
+#: mail-to-friend.php:21
+msgid "thought you might be interested in this house at the"
+msgstr "dacht dat je misschien geinteresseerd zou zijn in de deze woning aan de"
+
+#: mail-to-friend.php:27
+msgid "You have emailed your friend a link to this house!"
+msgstr "U heeft uw vriend een link gestuurd naar deze woning!"
+
+#: mail-to-friend.php:34
+msgid "We apologize for the inconvenience, but something went wrong. Please try to contact your friend in another way."
+msgstr "Sorry voor het ongemak, maar er is iets verkeerd gegaan. Probeer alstublieft op een andere manier contact op te nemen met uw vriend."
+
+#: nomis-admin.php:393
+msgid "Settings"
+msgstr "Instellingen"
+
+#: nomis-admin.php:393
+msgid "Save changes"
+msgstr "Wijzigingen opslaan"
+
+#: nomis-admin.php:428
+msgid "General"
+msgstr "Algemeen"
+
+#: nomis-admin.php:430
+msgid "Individual property"
+msgstr "Individueel object"
+
+#: nomis-admin.php:431
+msgid "Search"
+msgstr "Zoeken"
+
+#: nomis-admin.php:432
+msgid "Quick search form"
+msgstr "Quick search formulier"
+
+#: nomis-admin.php:433
+msgid "Searchresults"
+msgstr "Zoekresultaten"
+
+#: nomis-admin.php:434
+msgid "Random properties"
+msgstr "Willekeurige objecten"
+
+#: nomis-admin.php:435
+msgid "Forms"
+msgstr "Formulieren"
+
+#: nomis-admin.php:436
+msgid "Mobile"
+msgstr "Mobiel"
+
+#: nomis-admin.php:437
+msgid "Help"
+msgstr "Help"
+
+#: nomis-admin.php:445
+msgid "Api key"
+msgstr "Api sleutel"
+
+#: nomis-admin.php:452
+msgid "Verified"
+msgstr "Geverifieerd"
+
+#: nomis-admin.php:454
+msgid "Incorrect"
+msgstr "Incorrect"
+
+#: nomis-admin.php:462
+msgid "Google analytics key"
+msgstr "Google Analytics sleutel"
+
+#: nomis-admin.php:467
+msgid "Contact Anno MMX to obtain this key."
+msgstr "Neem contact op met Anno MMX voor deze sleutel."
+
+#: nomis-admin.php:475
+msgid "Clear cache"
+msgstr "Cache legen"
+
+#: nomis-admin.php:479
+msgid "You have to enter a valid API key to gain access to all the options."
+msgstr "Voer een geldige API sleutel in om toegang te krijgen tot alle instellingen."
+
+#: nomis-admin.php:490
+msgid "Layout"
+msgstr "Indeling"
+
+#: nomis-admin.php:516
+msgid "Actions"
+msgstr "Acties"
+
+#: nomis-admin.php:522
+msgid "Back to search results button"
+msgstr "Terug naar zoekresultaten knop"
+
+#: nomis-admin.php:528
+msgid "Contact us about this house button"
+msgstr "Neem contact op over deze woning knop"
+
+#: nomis-admin.php:534
+msgid "AddThis button"
+msgstr "AddThis knop"
+
+#: nomis-admin.php:535
+msgid "Will display buttons to share on Facebook, Hyves etc."
+msgstr "Geeft knoppen weer om te delen op Facebook, Hyves etc."
+
+#: nomis-admin.php:541
+msgid "Mail to friend link"
+msgstr "Mail naar een vriend link"
+
+#: nomis-admin.php:547
+msgid "Print button"
+msgstr "Print knop"
+
+#: nomis-admin.php:555
+msgid "Contact email"
+msgstr "Contact email"
+
+#: nomis-admin.php:559
+msgid "This emailaddress will be used for contact about property requests"
+msgstr "Dit emailadres wordt gebruikt voor contact over woning aanvragen"
+
+#: nomis-admin.php:563
+#: translate-not-used.php:155
+msgid "Location"
+msgstr "Locatie"
+
+#: nomis-admin.php:568
+msgid "Display Google Maps"
+msgstr "Google Maps weergeven"
+
+#: nomis-admin.php:572
+msgid "Display Google Streetview"
+msgstr "Google Streetview weergeven"
+
+#: nomis-admin.php:580
+msgid "Rent details display and order"
+msgstr "Verhuur details weergave en volgorde"
+
+#: nomis-admin.php:602
+msgid "Properties for sale"
+msgstr "Woningen te koop"
+
+#: nomis-admin.php:607
+msgid "Use different list of details for properties that are for sale"
+msgstr "Gebruik een andere lijst details voor woning die te koop staan"
+
+#: nomis-admin.php:607
+msgid "The list of details below is used"
+msgstr "De lijst hieronder wordt gebruikt"
+
+#: nomis-admin.php:614
+msgid "Sale details display and order"
+msgstr "Verkoop details weergave en volgorde"
+
+#: nomis-admin.php:648
+#, fuzzy
+msgid "BOG details display and order"
+msgstr "Details weergave en volgorde"
+
+#: nomis-admin.php:686
+#: nomis-admin.php:770
+msgid "Search options"
+msgstr "Zoek instellingen"
+
+#: nomis-admin.php:693
+#: nomis-admin.php:777
+msgid "Display labels"
+msgstr "Labels weergeven"
+
+#: nomis-admin.php:699
+#: nomis-admin.php:794
+msgid "Search criteria"
+msgstr "Zoek criteria"
+
+#: nomis-admin.php:717
+#: nomis-admin.php:812
+msgid "Minimum price steps"
+msgstr "Minimum prijs stappen"
+
+#: nomis-admin.php:720
+#: nomis-admin.php:727
+#: nomis-admin.php:752
+#: nomis-admin.php:759
+#: nomis-admin.php:815
+#: nomis-admin.php:822
+msgid "Enter prices separated by comma's"
+msgstr "Voer prijzen gescheiden door komma's in"
+
+#: nomis-admin.php:724
+#: nomis-admin.php:819
+msgid "Maximum price steps"
+msgstr "Maximum prijs stappen"
+
+#: nomis-admin.php:731
+msgid "Search criteria sale"
+msgstr "Zoek criteria verkoop"
+
+#: nomis-admin.php:749
+msgid "Minimum price steps sale"
+msgstr "Minimum prijs stappen verkoop"
+
+#: nomis-admin.php:756
+msgid "Maximum price steps sale"
+msgstr "Maximum prijs stappen verkoop"
+
+#: nomis-admin.php:785
+msgid "Search results page id"
+msgstr "Zoekresultaten pagina id"
+
+#: nomis-admin.php:790
+msgid "This is where the form action points to. Should be the id of the page where you use the shortcode [nomis-properties]."
+msgstr "Dit is waar de form action naar verwijst. Dit moet het id van de pagina zijn waar je de shortcode [nomis-properties] gebruikt."
+
+#: nomis-admin.php:833
+#: nomis-admin.php:905
+msgid "Details display and order"
+msgstr "Details weergave en volgorde"
+
+#: nomis-admin.php:855
+msgid "Order by"
+msgstr "Sorteren op"
+
+#: nomis-admin.php:863
+#: functions/nomisDetails.func.php:14
+msgid "Price"
+msgstr "Prijs"
+
+#: nomis-admin.php:864
+msgid "Date"
+msgstr "Datum"
+
+#: nomis-admin.php:865
+msgid "City"
+msgstr "Stad"
+
+#: nomis-admin.php:866
+#: translate-not-used.php:5
+msgid "Street"
+msgstr "Straat"
+
+#: nomis-admin.php:867
+msgid "District"
+msgstr "Wijk"
+
+#: nomis-admin.php:868
+msgid "Bedrooms"
+msgstr "Slaapkamers"
+
+#: nomis-admin.php:869
+msgid "Saleprice"
+msgstr "Verkoopprijs"
+
+#: nomis-admin.php:870
+#: functions/nomisDetails.func.php:31
+msgid "Availability"
+msgstr "Beschikbaar"
+
+#: nomis-admin.php:871
+msgid "Random"
+msgstr "Willekeurig"
+
+#: nomis-admin.php:874
+msgid "Ascending"
+msgstr "Oplopend"
+
+#: nomis-admin.php:875
+msgid "Descending"
+msgstr "Aflopend"
+
+#: nomis-admin.php:885
+msgid "Options"
+msgstr "Instellingen"
+
+#: nomis-admin.php:890
+msgid "Display link"
+msgstr "Link weergeven"
+
+#: nomis-admin.php:894
+msgid "Display title"
+msgstr "Titel weergeven"
+
+#: nomis-admin.php:898
+msgid "Display photo"
+msgstr "Foto weergeven"
+
+#: nomis-admin.php:928
+msgid "Check out the documentation on forms first at"
+msgstr "Bekijk eerst de documentatie over de formulieren op"
+
+#: nomis-admin.php:932
+#: translate-not-used.php:43
+msgid "Name"
+msgstr "Naam"
+
+#: nomis-admin.php:934
+msgid "Label"
+msgstr "Label"
+
+#: nomis-admin.php:944
+msgid "Required"
+msgstr "Verplicht"
+
+#: nomis-admin.php:945
+msgid "Not required"
+msgstr "Niet verplicht"
+
+#: nomis-admin.php:947
+msgid "Description"
+msgstr "Beschrijving"
+
+#: nomis-admin.php:952
+msgid "New form field"
+msgstr "Nieuw form field"
+
+#: nomis-admin.php:956
+msgid "Add request"
+msgstr "Aanvraagformulier"
+
+#: nomis-admin.php:962
+msgid "Add rental declaration"
+msgstr "Verhuurdersverklaring toevoegen"
+
+#: nomis-admin.php:1001
+msgid "Disable mobile version"
+msgstr "Mobiele versie uitschakelen"
+
+#: nomis-admin.php:1001
+msgid "When checked, the normal version of the website is also shown on mobile devices"
+msgstr "Wanneer dit is aangevinkt wordt de normale versie van de website ook op mobile devices getoond"
+
+#: nomis-admin.php:1008
+msgid "Documentation"
+msgstr "Documentatie"
+
+#: nomis-plugin.php:75
+#: nomis-plugin.php:311
+msgid "Something went wrong"
+msgstr "Er is iets fout gegaan"
+
+#: nomis-plugin.php:76
+#: nomis-plugin.php:312
+msgid "We are very sorry for the inconvenience. Please contact the owner of this website and we will have it fixed."
+msgstr "Onze excuses voor het ongemak. Neem alstublieft contact op met de eigenaar van deze website en we zorgen dat het gerepareerd wordt."
+
+#: nomis-plugin.php:376
+msgid "You do not have sufficient permissions to access this page."
+msgstr "U heeft niet voldoende rechten voor toegang tot deze pagina."
+
+#: translate-not-used.php:6
+msgid "Zipcode"
+msgstr "Postcode"
+
+#: translate-not-used.php:7
+msgid "Subdistrict"
+msgstr "Subwijk"
+
+#: translate-not-used.php:8
+msgid "Toilets"
+msgstr "Toiletten"
+
+#: translate-not-used.php:9
+msgid "Bathrooms"
+msgstr "Badkamers"
+
+#: translate-not-used.php:10
+msgid "Flooring"
+msgstr "Vloer"
+
+#: translate-not-used.php:11
+msgid "Kitchen"
+msgstr "Keuken"
+
+#: translate-not-used.php:12
+msgid "Kitchen fridge"
+msgstr "Keuken koelkast"
+
+#: translate-not-used.php:13
+msgid "Kitchen freezer"
+msgstr "Keuken vriezer"
+
+#: translate-not-used.php:14
+msgid "Kitchen dishwasher"
+msgstr "Keuken afwasmachine"
+
+#: translate-not-used.php:15
+msgid "Kitchen furnace"
+msgstr "Keuken fornuis"
+
+#: translate-not-used.php:16
+msgid "Kitchen oven"
+msgstr "Keuken oven"
+
+#: translate-not-used.php:17
+msgid "Kitchen microwave"
+msgstr "Keuken magnetron"
+
+#: translate-not-used.php:18
+msgid "Kitchen microwave combi"
+msgstr "Keuken combimagnetron"
+
+#: translate-not-used.php:19
+msgid "Kitchen hood"
+msgstr "Keuken afzuigkap"
+
+#: translate-not-used.php:20
+msgid "House type"
+msgstr "Woning type"
+
+#: translate-not-used.php:21
+msgid "Parking"
+msgstr "Parkeren"
+
+#: translate-not-used.php:22
+msgid "Roofterrace"
+msgstr "Dakterras"
+
+#: translate-not-used.php:23
+msgid "Fridge"
+msgstr "Koelkast"
+
+#: translate-not-used.php:24
+msgid "Freezer"
+msgstr "Vriezer"
+
+#: translate-not-used.php:25
+msgid "Dishwasher"
+msgstr "Afwasmachine"
+
+#: translate-not-used.php:26
+msgid "Microwave combi"
+msgstr "Combimagnetron"
+
+#: translate-not-used.php:27
+msgid "Hood"
+msgstr "Afzuigkap"
+
+#: translate-not-used.php:28
+#: functions/nomisDetails.func.php:84
+msgid "Furnace"
+msgstr "Fornuis"
+
+#: translate-not-used.php:29
+msgid "Unfurnished"
+msgstr "Gestoffeerd"
+
+#: translate-not-used.php:30
+msgid "Furnished"
+msgstr "Gemeubileerd"
+
+#: translate-not-used.php:31
+msgid "Bare"
+msgstr "Helemaal leeg"
+
+#: translate-not-used.php:32
+msgid "inclusive"
+msgstr "inclusief"
+
+#: translate-not-used.php:33
+msgid "exclusive"
+msgstr "exclusief"
+
+#: translate-not-used.php:34
+msgid "Telephone"
+msgstr "Telefoon"
+
+#: translate-not-used.php:35
+msgid "Mobile telephone"
+msgstr "Mobiel"
+
+#: translate-not-used.php:36
+msgid "Emailaddress"
+msgstr "Emailadres"
+
+#: translate-not-used.php:37
+msgid "House address"
+msgstr "Woning adres"
+
+#: translate-not-used.php:38
+msgid "House zipcode"
+msgstr "Woning postcode"
+
+#: translate-not-used.php:39
+msgid "House city"
+msgstr "Woning stad"
+
+#: translate-not-used.php:40
+msgid "House bedrooms"
+msgstr "Woning slaapkamers"
+
+#: translate-not-used.php:41
+msgid "House surface"
+msgstr "Woning oppervlakte"
+
+#: translate-not-used.php:42
+#: translate-not-used.php:102
+msgid "Company"
+msgstr "Bedrijf"
+
+#: translate-not-used.php:44
+msgid "When do you want to rent"
+msgstr "Wanneer wilt u huren"
+
+#: translate-not-used.php:45
+msgid "Commencing date in dd-mm-yyyy"
+msgstr "Startdatum in dd-mm-jjjj"
+
+#: translate-not-used.php:46
+msgid "Max price"
+msgstr "Maximum prijs"
+
+#: translate-not-used.php:47
+msgid "Other wishes"
+msgstr "Overige wensen"
+
+#: translate-not-used.php:48
+msgid "View property"
+msgstr "Woning bekijken"
+
+#: translate-not-used.php:49
+#: functions/nomisDetails.func.php:26
+#: functions/nomisDetails.func.php:63
+msgid "Service costs"
+msgstr "Servicekosten"
+
+#: translate-not-used.php:50
+#: functions/nomisDetails.func.php:53
+msgid "Condition"
+msgstr "Koopconditie"
+
+#: translate-not-used.php:51
+#: functions/nomisDetails.func.php:58
+msgid "Price type"
+msgstr "Prijstype"
+
+#: translate-not-used.php:52
+msgid "Property type 2"
+msgstr "Soort woning"
+
+#: translate-not-used.php:53
+msgid "Property type 3"
+msgstr "Type woning"
+
+#: translate-not-used.php:54
+msgid "Building type"
+msgstr "Bouwtype"
+
+#: translate-not-used.php:55
+#: functions/nomisDetails.func.php:68
+msgid "Buildyear"
+msgstr "Bouwjaar"
+
+#: translate-not-used.php:56
+msgid "Total rooms"
+msgstr "Totaal aantal kamers"
+
+#: translate-not-used.php:57
+msgid "Surface outdoor"
+msgstr "Oppervlakte buiten"
+
+#: translate-not-used.php:58
+msgid "Livinglayers"
+msgstr "Verdiepingen"
+
+#: translate-not-used.php:59
+msgid "Livinglayer"
+msgstr "Beginverdieping"
+
+#: translate-not-used.php:60
+msgid "Open porch"
+msgstr "Open portiek"
+
+#: translate-not-used.php:61
+msgid "Maintenance indoor"
+msgstr "Onderhoud binnen"
+
+#: translate-not-used.php:62
+msgid "Maintenance outdoor"
+msgstr "Onderhoud buiten"
+
+#: translate-not-used.php:63
+msgid "Rooms"
+msgstr "Kamers"
+
+#: translate-not-used.php:64
+msgid "Seller"
+msgstr "Kelder"
+
+#: translate-not-used.php:65
+msgid "Loft"
+msgstr "Zolder"
+
+#: translate-not-used.php:66
+msgid "Roof type"
+msgstr "Daktype"
+
+#: translate-not-used.php:67
+msgid "Heating"
+msgstr "Verwarming"
+
+#: translate-not-used.php:68
+msgid "Energy label"
+msgstr "Energielabel"
+
+#: translate-not-used.php:69
+msgid "Isolation"
+msgstr "Isolatie"
+
+#: translate-not-used.php:70
+msgid "Storage"
+msgstr "Opslag"
+
+#: translate-not-used.php:71
+msgid "Basic information"
+msgstr "Basisinformatie"
+
+#: translate-not-used.php:72
+msgid "Building"
+msgstr "Gebouw"
+
+#: translate-not-used.php:73
+msgid "Email address"
+msgstr "Emailadres"
+
+#: translate-not-used.php:74
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: translate-not-used.php:75
+msgid "Field is required"
+msgstr "Dit veld is verplicht"
+
+#: translate-not-used.php:76
+msgid "Netherlands"
+msgstr "Nederland"
+
+#: translate-not-used.php:77
+msgid "country"
+msgstr "land"
+
+#: translate-not-used.php:78
+msgid "Country"
+msgstr "Land"
+
+#: translate-not-used.php:79
+msgid "Gardens"
+msgstr "Tuin"
+
+#: translate-not-used.php:80
+msgid "Balconies"
+msgstr "Balkon"
+
+#: translate-not-used.php:81
+msgid "Storages"
+msgstr "Opslag"
+
+#: translate-not-used.php:82
+msgid "Parkings"
+msgstr "Parkeren"
+
+#: translate-not-used.php:83
+msgid "Rented out"
+msgstr "Verhuurd"
+
+#: translate-not-used.php:84
+msgid "New"
+msgstr "Nieuw"
+
+#: translate-not-used.php:85
+msgid "Spotlight"
+msgstr "Topper"
+
+#: translate-not-used.php:86
+msgid "Soon"
+msgstr "Binnenkort"
+
+#: translate-not-used.php:87
+msgid "Top house"
+msgstr "Tophuis"
+
+#: translate-not-used.php:88
+msgid "Top property"
+msgstr "Topwoning"
+
+#: translate-not-used.php:89
+msgid "Sold"
+msgstr "Verkocht"
+
+#: translate-not-used.php:90
+msgid "Sold under reserves"
+msgstr "Verkocht onder voorbehoud"
+
+#: translate-not-used.php:91
+msgid "Rented out under reserves"
+msgstr "Verhuurd onder voorbehoud"
+
+#: translate-not-used.php:92
+msgid "Lowered in price"
+msgstr "In prijs verlaagd"
+
+#: translate-not-used.php:93
+msgid "Recommended"
+msgstr "Aanrader"
+
+#: translate-not-used.php:94
+msgid "Hoofdbestemming"
+msgstr "Hoofdbestemming"
+
+#: translate-not-used.php:95
+msgid "Nevenbestemmingen"
+msgstr "Nevenbestemming"
+
+#: translate-not-used.php:96
+msgid "Bouwgrond"
+msgstr "Bouwgrond"
+
+#: translate-not-used.php:97
+msgid "Bouwgrond bebouwingsmogelijkheid"
+msgstr "Bebouwingsmogelijkheid"
+
+#: translate-not-used.php:98
+msgid "Bouwgrond bouwvolume procentueel"
+msgstr "Bouwvolume procentueel"
+
+#: translate-not-used.php:99
+msgid "Bouwgrond bouwvolume vierkante meters"
+msgstr "Bouwvolume vierkante meters"
+
+#: translate-not-used.php:100
+msgid "Bouwgrond bouwvolume bouwhoogte"
+msgstr "Bouwvolume bouwhoogte"
+
+#: translate-not-used.php:101
+msgid "Bouwgrond units"
+msgstr "Bouwgrond units"
+
+#: translate-not-used.php:103
+#: translate-not-used.php:114
+#: translate-not-used.php:129
+#: translate-not-used.php:141
+msgid "Surface"
+msgstr "Oppervlakte"
+
+#: translate-not-used.php:104
+msgid "Units surface"
+msgstr "Unit oppervlakte"
+
+#: translate-not-used.php:105
+msgid "Height"
+msgstr "Hoogte"
+
+#: translate-not-used.php:106
+msgid "Floor load"
+msgstr "Vloer gewicht"
+
+#: translate-not-used.php:107
+msgid "Vrije overspanning"
+msgstr ""
+
+#: translate-not-used.php:108
+#: translate-not-used.php:118
+msgid "Luchtbehandelingen"
+msgstr ""
+
+#: translate-not-used.php:109
+msgid "Voorzieningen"
+msgstr ""
+
+#: translate-not-used.php:110
+#: translate-not-used.php:120
+#: translate-not-used.php:147
+msgid "Prijs"
+msgstr "Prijs"
+
+#: translate-not-used.php:111
+#: translate-not-used.php:121
+#: translate-not-used.php:136
+#: translate-not-used.php:148
+msgid "Btwtarief"
+msgstr "Btwtarief"
+
+#: translate-not-used.php:112
+#: translate-not-used.php:122
+#: translate-not-used.php:137
+#: translate-not-used.php:149
+msgid "Btwbelast"
+msgstr ""
+
+#: translate-not-used.php:113
+msgid "Office"
+msgstr "Kantoor"
+
+#: translate-not-used.php:115
+#: translate-not-used.php:130
+msgid "Floors"
+msgstr "Verdiepingen"
+
+#: translate-not-used.php:116
+msgid "Units from"
+msgstr "Units vanaf"
+
+#: translate-not-used.php:117
+msgid "Turnkey"
+msgstr "Turnkey"
+
+#: translate-not-used.php:119
+msgid "Opleveringsniveau"
+msgstr ""
+
+#: translate-not-used.php:123
+msgid "Terrein"
+msgstr ""
+
+#: translate-not-used.php:124
+msgid "Oppervlakte"
+msgstr ""
+
+#: translate-not-used.php:125
+msgid "Bouwhoogte"
+msgstr ""
+
+#: translate-not-used.php:126
+msgid "Uitbreiding procentueel"
+msgstr ""
+
+#: translate-not-used.php:127
+msgid "Uitbreiding vierkante meters"
+msgstr ""
+
+#: translate-not-used.php:128
+msgid "Shop"
+msgstr "Winkel"
+
+#: translate-not-used.php:131
+msgid "Shopkeepers association contribution"
+msgstr "Winkeliersvereninging contributie"
+
+#: translate-not-used.php:132
+msgid "Frontal width"
+msgstr "Voorkant breedte"
+
+#: translate-not-used.php:133
+msgid "Catering"
+msgstr "Cateing"
+
+#: translate-not-used.php:134
+msgid "Verkoop vloeroppervlakte"
+msgstr ""
+
+#: translate-not-used.php:135
+msgid "Branchbeperking"
+msgstr ""
+
+#: translate-not-used.php:138
+#: translate-not-used.php:150
+msgid "Personeel"
+msgstr ""
+
+#: translate-not-used.php:139
+#: translate-not-used.php:151
+msgid "Welstandsklasse"
+msgstr ""
+
+#: translate-not-used.php:140
+msgid "Horeca"
+msgstr ""
+
+#: translate-not-used.php:142
+msgid "Verkoop vloer oppervlakte"
+msgstr ""
+
+#: translate-not-used.php:143
+msgid "Verdieping"
+msgstr ""
+
+#: translate-not-used.php:144
+msgid "Regio"
+msgstr ""
+
+#: translate-not-used.php:145
+msgid "Soort"
+msgstr "Soort"
+
+#: translate-not-used.php:146
+msgid "Concentratiegebied"
+msgstr ""
+
+#: translate-not-used.php:152
+msgid "Garagebox"
+msgstr ""
+
+#: translate-not-used.php:153
+msgid "Praktijkruimte"
+msgstr ""
+
+#: translate-not-used.php:154
+msgid "Showroom"
+msgstr ""
+
+#: translate-not-used.php:156
+msgid "Trainstation"
+msgstr "Treinstation"
+
+#: translate-not-used.php:157
+msgid "Trainstop"
+msgstr "Treinhalte"
+
+#: translate-not-used.php:158
+msgid "Tramstation"
+msgstr "Tramstation"
+
+#: translate-not-used.php:159
+msgid "Tramstop"
+msgstr "Tramhalte"
+
+#: translate-not-used.php:160
+msgid "Busstation"
+msgstr "Busstation"
+
+#: translate-not-used.php:161
+msgid "Busstop"
+msgstr "Bushalte"
+
+#: translate-not-used.php:162
+msgid "Metrostation"
+msgstr "Metrohalte"
+
+#: translate-not-used.php:163
+msgid "Metrostop"
+msgstr "Metrohalte"
+
+#: translate-not-used.php:164
+msgid "Highway"
+msgstr "Snelweg"
+
+#: translate-not-used.php:165
+msgid "Bank"
+msgstr ""
+
+#: translate-not-used.php:166
+msgid "Bank aantal"
+msgstr ""
+
+#: translate-not-used.php:167
+msgid "Ontspanning"
+msgstr ""
+
+#: translate-not-used.php:168
+msgid "Ontspanning aantal"
+msgstr ""
+
+#: translate-not-used.php:169
+msgid "Restaurant"
+msgstr ""
+
+#: translate-not-used.php:170
+msgid "Restaurant aantal"
+msgstr ""
+
+#: translate-not-used.php:171
+msgid "Winkel"
+msgstr ""
+
+#: translate-not-used.php:172
+msgid "Winkel aantal"
+msgstr ""
+
+#: translate-not-used.php:173
+msgid "Nietoverdekt aantal"
+msgstr ""
+
+#: translate-not-used.php:174
+msgid "Nietoverdekt prijs"
+msgstr ""
+
+#: translate-not-used.php:175
+msgid "Nietoverdekt btwtarief"
+msgstr ""
+
+#: translate-not-used.php:176
+msgid "Nietoverdekt btwbelast"
+msgstr ""
+
+#: translate-not-used.php:177
+msgid "Overdekt aantal"
+msgstr ""
+
+#: translate-not-used.php:178
+msgid "Overdekt prijs"
+msgstr "Overdekt prijs"
+
+#: translate-not-used.php:179
+msgid "Overdekt btwtarief"
+msgstr ""
+
+#: translate-not-used.php:180
+msgid "Overdekt btwbelast"
+msgstr ""
+
+#: translate-not-used.php:181
+msgid "Faciliteiten"
+msgstr ""
+
+#: translate-not-used.php:182
+msgid "Bog bouwgrond"
+msgstr "Bouwgrond"
+
+#: translate-not-used.php:183
+msgid "Bog company"
+msgstr "Bedrijf"
+
+#: translate-not-used.php:184
+msgid "Bog office"
+msgstr "Kantoor"
+
+#: exclude-pages/exclude_pages.php:192
+msgid "Comma separated list of post and page IDs to exclude when returning pages from the get_pages function."
+msgstr "Komma gescheiden lijst van alle posts en pagina IDs om te excluden wanneer pagina's gereturned worden van de get_pages functie."
+
+#: exclude-pages/exclude_pages.php:221
+msgid "Include this page in lists of pages"
+msgstr "Include deze pagina in de lijst van pagina's"
+
+#: exclude-pages/exclude_pages.php:225
+#, php-format
+msgid "N.B. An ancestor of this page is excluded, so this page is too (<a href=\"%1$s\" title=\"%2$s\">edit ancestor</a>)."
+msgstr "N.B. An ancestor of this page is excluded, so this page is too (<a href=\"%1$s\" title=\"%2$s\">edit ancestor</a>)."
+
+#: exclude-pages/exclude_pages.php:225
+msgid "edit the excluded ancestor"
+msgstr "edit the excluded ancestor"
+
+#: exclude-pages/exclude_pages.php:233
+#, php-format
+msgid "N.B. This page can still appear in explicitly created <a href=\"%1$s\">menus</a> (<a id=\"ep_toggle_more\" href=\"#ep_explain_more\">explain more</a>)"
+msgstr "N.B. This page can still appear in explicitly created <a href=\"%1$s\">menus</a> (<a id=\"ep_toggle_more\" href=\"#ep_explain_more\">explain more</a>)"
+
+#: exclude-pages/exclude_pages.php:236
+msgid "N.B. This page can still appear in explicitly created menus (<a id=\"ep_toggle_more\" href=\"#ep_explain_more\">explain more</a>)"
+msgstr "N.B. This page can still appear in explicitly created menus (<a id=\"ep_toggle_more\" href=\"#ep_explain_more\">explain more</a>)"
+
+#: exclude-pages/exclude_pages.php:240
+#, php-format
+msgid "WordPress provides a simple function for you to maintain your site <a href=\"%1$s\">menus</a>. If you create a menu which includes this page, the checkbox above will not have any effect on the visibility of that menu item."
+msgstr "WordPress provides a simple function for you to maintain your site <a href=\"%1$s\">menus</a>. If you create a menu which includes this page, the checkbox above will not have any effect on the visibility of that menu item."
+
+#: exclude-pages/exclude_pages.php:243
+msgid "WordPress provides a simple function for you to maintain the site menus, which your site administrator is using. If a menu includes this page, the checkbox above will not have any effect on the visibility of that menu item."
+msgstr "WordPress provides a simple function for you to maintain the site menus, which your site administrator is using. If a menu includes this page, the checkbox above will not have any effect on the visibility of that menu item."
+
+#: exclude-pages/exclude_pages.php:245
+msgid "If you think you no longer need the Exclude Pages plugin you should talk to your WordPress administrator about disabling it."
+msgstr "If you think you no longer need the Exclude Pages plugin you should talk to your WordPress administrator about disabling it."
+
+#: exclude-pages/exclude_pages.php:343
+msgid "Exclude Pages"
+msgstr "Exclude Pages"
+
+#: functions/nomisDetails.func.php:21
+msgid "1"
+msgstr "1"
+
+#: functions/nomisDetails.func.php:21
+msgid "per year"
+msgstr "per jaar"
+
+#: functions/nomisDetails.func.php:33
+msgid "Direct"
+msgstr "Direct"
+
+#: functions/nomisDetails.func.php:33
+msgid "From"
+msgstr "Vanaf"
+
+#: functions/nomisDetails.func.php:43
+msgid "Address"
+msgstr "Adres"
+
+#: functions/nomisDetails.func.php:48
+msgid "Status"
+msgstr "Status"
+
+#: functions/nomisDetails.func.php:80
+#: functions/nomisDetails.func.php:117
+msgid "Yes"
+msgstr "Ja"
+
+#: functions/nomisDetails.func.php:80
+#: functions/nomisDetails.func.php:113
+msgid "No"
+msgstr "Nee"
+
+#: functions/nomisDetails.func.php:89
+msgid "Outside space"
+msgstr "Buitenruimte"
+
+#: functions/nomisDetails.func.php:96
+msgid "garden"
+msgstr "tuin"
+
+#: functions/nomisDetails.func.php:102
+msgid "balcony"
+msgstr "balkon"
+
+#: functions/nomisDetails.func.php:108
+msgid "roofterrace"
+msgstr "dakterras"
+
+#: functions/nomisSearch.func.php:14
+#: functions/nomisSearch.func.php:50
+msgid "Minimum price"
+msgstr "Minimum prijs"
+
+#: functions/nomisSearch.func.php:26
+#: functions/nomisSearch.func.php:38
+msgid "Maximum price"
+msgstr "Maximum prijs"
+
+#: functions/nomisSearch.func.php:96
+msgid "Interior"
+msgstr "Interieur"
+
+#: functions/nomisSearch.func.php:150
+msgid "Within 2 months"
+msgstr "Binnen 2 maanden"
+
+#: functions/nomisSearch.func.php:155
+msgid "Garden"
+msgstr "Tuin"
+
+#: functions/nomisSearch.func.php:161
+msgid "Balcony"
+msgstr "Balkon"
+
+#: functions/nomisSearch.func.php:167
+msgid "Elevator"
+msgstr "Lift"
+
+#: functions/nomisSearch.func.php:179
+msgid "For rent"
+msgstr "Te huur"
+
+#: functions/nomisSearch.func.php:179
+msgid "For sale"
+msgstr "Te koop"
+
+#: functions/nomisSearch.func.php:201
+msgid "Select"
+msgstr "Selecteer"
+
+#: templates/contact.phtml:4
+msgid "You successfully contacted us, we'll get back to you as soon as possible!"
+msgstr "U heeft succesvol contact opgenomen, u ontvangt zo snel mogelijk bericht van ons!"
+
+#: templates/contact.phtml:8
+msgid "Error occurred, please review."
+msgstr "Er is een fout opgetreden, controleer uw velden."
+
+#: templates/contact.phtml:20
+msgid "Send"
+msgstr "Verzenden"
+
+#: templates/properties-map.phtml:29
+msgid "Could not load the map"
+msgstr "Kon de kaart niet laden"
+
+#: templates/properties.phtml:65
+msgid "No properties that match your search criteria were found."
+msgstr "Er zijn geen woningen gevonden die aan uw zoekcriteria voldoen."
+
+#: templates/_property_controls.phtml:18
+msgid "Back to search results"
+msgstr "Terug naar zoekresultaten"
+
+#: templates/_property_controls.phtml:23
+#: templates/_property_controls.phtml:27
+msgid "Contact us about this house"
+msgstr "Neem contact op over deze woning"
+
+#: templates/_property_controls.phtml:32
+msgid "Email"
+msgstr "Emailadres"
+
+#: templates/_property_controls.phtml:34
+msgid "Telephonenumber"
+msgstr "Telefoonnummer"
+
+#: templates/_property_controls.phtml:36
+#: templates/_property_controls.phtml:134
+msgid "Message"
+msgstr "Bericht"
+
+#: templates/_property_controls.phtml:41
+#: templates/_property_controls.phtml:139
+msgid "Fields with a * are required"
+msgstr "Velden met een * zijn verplicht"
+
+#: templates/_property_controls.phtml:60
+msgid "Please enter your name."
+msgstr "Voer uw naam in."
+
+#: templates/_property_controls.phtml:65
+msgid "Please enter a valid emailaddress."
+msgstr "Voer een geldig emailadres in."
+
+#: templates/_property_controls.phtml:120
+msgid "Mail to friend"
+msgstr "Mail naar een vriend"
+
+#: templates/_property_controls.phtml:123
+msgid "Mail to a friend"
+msgstr "Mail naar een vriend"
+
+#: templates/_property_controls.phtml:126
+msgid "Name sender"
+msgstr "Naam afzender"
+
+#: templates/_property_controls.phtml:128
+msgid "Email sender"
+msgstr "Email afzender"
+
+#: templates/_property_controls.phtml:130
+msgid "Name recipient"
+msgstr "Naam ontvanger"
+
+#: templates/_property_controls.phtml:132
+msgid "Email recipient"
+msgstr "Email ontvanger"
+
+#: templates/_property_controls.phtml:158
+msgid "Please enter a senders name."
+msgstr "Voer een naam in voor de afzender."
+
+#: templates/_property_controls.phtml:163
+msgid "Please enter a valid emailaddress for the sender."
+msgstr "Voer een geldig emailadres in voor de afzender."
+
+#: templates/_property_controls.phtml:168
+msgid "Please enter a recipients name."
+msgstr "Voer een naam in voor de ontvanger."
+
+#: templates/_property_controls.phtml:173
+msgid "Please enter a valid emailaddress for the recipient."
+msgstr "Voer een geldig emailadres in voor de ontvanger."
+
+#: templates/_property_controls.phtml:213
+msgid "Print"
+msgstr "Printen"
+
+#: templates/_property_description.phtml:2
+msgid "There is no description available."
+msgstr "Er is geen beschrijving beschikbaar."
+
+#: templates/_property_layout_3.phtml:26
+msgid "Details"
+msgstr "Details"
+
+#: templates/_property_layout_3.phtml:27
+msgid "Photos"
+msgstr "Foto's"
+
+#: templates/_property_layout_3.phtml:29
+msgid "Map"
+msgstr "Kaart"
+
+#: templates/_property_layout_3.phtml:31
+msgid "Streetview"
+msgstr "Streetview"
+
+#: templates/_property_location.phtml:5
+msgid "Show maps"
+msgstr "Kaart weergeven"
+
+#: templates/_property_location.phtml:7
+msgid "Show streetview"
+msgstr "Streetview weergeven"
+
+#: templates/mobile/properties.phtml:55
+msgid "Directly available"
+msgstr "Direct beschikbaar"
+
+#: templates/mobile/properties.phtml:55
+msgid "Available from"
+msgstr "Beschikbaar vanaf"
+
+#: templates/mobile/properties.phtml:58
+msgid "bedroom"
+msgstr "slaapkamer"
+
+#: templates/mobile/property.phtml:101
+#: templates/mobile2/templates/property.phtml:36
+msgid "Maps"
+msgstr "Kaart"
+
+#: templates/mobile/property.phtml:142
+msgid "Your name"
+msgstr "Uw naam"
+
+#: templates/mobile/property.phtml:144
+msgid "Your email"
+msgstr "U email"
+
+#: templates/mobile2/templates/contact.phtml:29
+#: templates/mobile2/templates/single-request.phtml:8
+msgid "We apologize for the inconvenience, but something went wrong. Please try to contact us in another way."
+msgstr "Sorry voor het ongemak, maar er is iets verkeerd gegaan. Probeer alstublieft op een andere manier contact met ons op te nemen."
+
+#: templates/mobile2/templates/contact.phtml:33
+msgid "Get in touch"
+msgstr "Neem contact op"
+
+#: templates/mobile2/templates/index.phtml:52
+msgid "Search in neighborhood"
+msgstr "Zoek in je buurt"
+
+#, fuzzy
+#~ msgid "Company surface"
+#~ msgstr "Woning oppervlakte"
+
+#, fuzzy
+#~ msgid "Company height"
+#~ msgstr "Bedrijf"
+
+#, fuzzy
+#~ msgid "Company prijs"
+#~ msgstr "Bedrijf"
+
+#, fuzzy
+#~ msgid "Office surface"
+#~ msgstr "Woning oppervlakte"
+
+#, fuzzy
+#~ msgid "Shop surface"
+#~ msgstr "Oppervlakte"
+
+#, fuzzy
+#~ msgid "Shop prijs"
+#~ msgstr "Kaart weergeven"
+
+#, fuzzy
+#~ msgid "Horeca surface"
+#~ msgstr "Woning oppervlakte"
+
+#~ msgid ""
+#~ "Something went wrong. We are sorry for the inconvenience. Please contact "
+#~ "us and we will have it fixed."
+#~ msgstr ""
+#~ "Er is iets fout gegaan, onze excuses voor het ongemak. Neem a.u.b. "
+#~ "contact met ons op en we zorgen dat gerepareerd wordt."
+
+#~ msgid "Usually just the broker name, phonenumber and emailaddress"
+#~ msgstr ""
+#~ "Gewoonlijk alleen de naam, het telefoonnummer en het emailadres van de "
+#~ "makelaar"
+
+#~ msgid "The name is how the field will be described in Nomis to the broker."
+#~ msgstr "De naam is hoe het veld aan de makelaar beschreven wordt in Nomis."
+
+#~ msgid ""
+#~ "The label is what will be shown next to the field on the website of the "
+#~ "broker."
+#~ msgstr ""
+#~ "Het label is wat naast het veld wordt getoond op de website van de "
+#~ "makelaar."
+
+#~ msgid "Empty the name of a field and save the settings to delete it."
+#~ msgstr ""
+#~ "Maak de naam van een veld leeg en sla de instellingen op om het te "
+#~ "verwijderen."
+
+#~ msgid "Your emailaddress"
+#~ msgstr "Uw emailadres"
+
+#~ msgid "Tips"
+#~ msgstr "Tips"
+
+#~ msgid ""
+#~ "Change the permalink structure to /%postname%/ else the links to the "
+#~ "property page won't work."
+#~ msgstr ""
+#~ "Change the permalink structure to /%postname%/ else the links to the "
+#~ "property page won't work."
+
+#~ msgid ""
+#~ "You can use all the shortcodes on any page you like, except for [nomis-"
+#~ "property], which has to be used on the page called property."
+#~ msgstr ""
+#~ "You can use all the shortcodes on any page you like, except for [nomis-"
+#~ "property], which has to be used on the page called property."
+
+#~ msgid ""
+#~ "To use a shortcode outside the Wordpress editor, like in your sidebar, "
+#~ "use do_shortcode(). For example: do_shortcode('[nomis-quick-search]')"
+#~ msgstr ""
+#~ "Om een shortcode buiten de Wordpress editor te gebruiken, zoals in je "
+#~ "sidebar, gebruik do_shortcod(). Bijvoorbeeld: do_shortcode('[nomis-quick-"
+#~ "search'])"
+
+#~ msgid ""
+#~ "Disable comments on the pages Nomis uses, for example properties, "
+#~ "individual property or add request."
+#~ msgstr ""
+#~ "Schakel reacties uit op de pagina's die Nomis gebruikt, bijvoorbeeld de "
+#~ "zoekpagina, een individuele object pagina of een aanvraag formulier."
+
+#~ msgid ""
+#~ "Exclude the property page from the navigation menu by unchecking the "
+#~ "checkbox on the bottom right while editing the property page in Wordpress."
+#~ msgstr ""
+#~ "Geef de property pagina niet weer in de navigatie door de checkbox "
+#~ "rechtsonder uit te vinken bij het editen van de property pagina in "
+#~ "Wordpress."
+
+#~ msgid ""
+#~ "Nomis offers integration with the translation plugin WPML. When you use "
+#~ "WPML, make sure to have 2 property pages with the content [nomis-"
+#~ "property]: property-nl and property-en"
+#~ msgstr ""
+#~ "Nomis biedt integratie met de vertaalplugin WPML. Als je hiervan "
+#~ "gebruikmaakt, zorg dan dat je 2 property pagina's heb met de content "
+#~ "[nomis-property]: property-nl en property-en"
+
+#~ msgid ""
+#~ "If you make use of WPML, use the shortcode [nomis-wpml-language-selector] "
+#~ "instead of the action icl_language_selector"
+#~ msgstr ""
+#~ "Als je WPML gebruikt, gebruik dan de shortcode [nomis-wpml-language-"
+#~ "selector] in plaats van de action icl_language_selector"
+
+#~ msgid "All shortcodes"
+#~ msgstr "Alle shortcodes"
+
+#~ msgid "Map of all the properties"
+#~ msgstr "Kaart van alle woningen"
+
+#~ msgid "Displays flags to switch language if you use WPML"
+#~ msgstr "Geeft vlaggetjes weer om van taal te wisselen als je WPML gebruikt"
+
+#~ msgid "Vve checklist"
+#~ msgstr "VVE checklist"
+
+#~ msgid "Price (highest first)"
+#~ msgstr "Prijs (hoogste eerst)"
+
+#~ msgid "Price (lowest first)"
+#~ msgstr "Prijs (laagste eerst)"
+
+#~ msgid "Select maximum price"
+#~ msgstr "Selecteer maximum prijs"
+
+#~ msgid "No maximum"
+#~ msgstr "Geen maximum"
+
+#~ msgid "Select district"
+#~ msgstr "Selecteer wijk"
+
+#~ msgid "Select interior"
+#~ msgstr "Selecteer interieur"
+
+#~ msgid "Select bedrooms"
+#~ msgstr "Selecteer slaapkamers"
+
+#~ msgid "None"
+#~ msgstr "Geen"
+
+#~ msgid "Save API key"
+#~ msgstr "API sleutel opslaan"
+
+#~ msgid ""
+#~ "Options for what is displayed of the properties in the search results, "
+#~ "but also in the random houses if that is used somewhere on the website."
+#~ msgstr ""
+#~ "Opties voor wat weergegeven wordt van de objecten in de zoekresultaten, "
+#~ "maar ook in de random objecten als dat ergens op de website wordt "
+#~ "gebruikt."
+
+#~ msgid "Date added (latest first"
+#~ msgstr "Datum toegevoegd (nieuwste eerst)"
+
+#~ msgid "Options for what is displayed on an individual property page."
+#~ msgstr "Opties voor wat wordt weergegeven op een individuele object pagina."
+
+#~ msgid ""
+#~ "Make sure you create the page \"mailtofriend\" that contains the "
+#~ "shortcode [nomis-mailtofriend]"
+#~ msgstr ""
+#~ "Let er op dat je de pagina \"mailtofriend\" aanmaakt waarin de shortcode "
+#~ "[nomis-mailtofriend] staat"
+
+#~ msgid "Save"
+#~ msgstr "Opslaan"

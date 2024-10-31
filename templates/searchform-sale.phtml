@@ -1,0 +1,11 @@
+<form method="get" action="" id="nomis-searchform" class="searchform-sale<?php if (get_option('nomis_search_display_labels') == '1') echo ' with-labels'; ?>">
+
+	<input type="hidden" name="for-sale" value="1" />
+
+	<?php nomisSearch(get_option('nomis_search_criteria_sale'), $data, 'search', $this->getAllCities(), $this->getAllDistricts(), $this->getAllHouseTypes(), $this->getAllCountries()); ?>
+
+	<div class="submit">
+		<input type="submit" class="search_button" value="<?php echo _e('Search', 'nomis'); ?>" title="<?php _e('Search', 'nomis'); ?>" />
+	</div>
+
+</form>

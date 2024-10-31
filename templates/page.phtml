@@ -1,0 +1,13 @@
+<div id="info" style="padding-right:20px;width:960px">
+	<?php if ($this->_data['title'] == 'Info huurder' || $this->_data['title'] == 'Tenant' || $this->_data['title'] == 'Info verhuurder' || $this->_data['title'] == 'Landlord'): ?>
+	<div class="content-page">
+		<?php echo $this->_data['content']; ?>
+	</div>
+	<?php if($this->_data['title'] == 'Info huurder' || $this->_data['title'] == 'Tenant')
+			echo '<img src="' . $_SESSION['baseUrl'] . '/images/huren.jpg" class="content-image" alt="decorative image" />'; ?>
+	<?php if($this->_data['title'] == 'Info verhuurder' || $this->_data['title'] == 'Landlord')
+			echo '<img src="' . $_SESSION['baseUrl'] . '/images/verhuur.jpg" class="content-image" alt="decorative image" />'; ?>
+	<?php else: 
+		echo $this->_data['content'];
+	endif; ?>
+</div>

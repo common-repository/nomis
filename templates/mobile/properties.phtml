@@ -1,0 +1,70 @@
+<?php include '_header.phtml'; ?>
+
+<?php include '_nav.phtml'; ?>
+
+<script type="text/javascript" src="http://static.annommx.com/javascript/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/nomis/javascript/jquery.lazyload.js"></script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$("img").lazyload(
+		{
+			placeholder : '<?php echo WP_PLUGIN_URL; ?>/nomis/images/loader.gif',
+			effect      : 'fadeIn'
+		});
+	});
+</script>
+
+<ul id="nomis-properties">
+	<?php $i = 1; foreach($this->_data['result'] as $house):
+		$title = $this->html($house['city'] . ', ' . $house['street']);
+		$link = '?a=property&amp;id=' . $house['id'] . '&amp;lang=' . $lang;
+	?>
+	<li class="<?php
+		echo $i == 1 ? 'first ' : '';
+		echo $i % 2 == 0 ? 'even ' : 'odd ';
+		echo $i == count($this->_data['result']) ? 'last ' : '';
+		echo $house['forsale'] == '1' ? 'sale ' : 'rent ';
+		?>">
+		<div class="photo">
+			<a href="<?php echo $link; ?>">
+				<?php if (empty($house['photos'][0]['small'])): ?>
+				<img width="100" src="<?php echo WP_PLUGIN_URL; ?>/nomis/images/cross.gif" alt="<?php echo $title; ?>" />
+				<?php else: ?>
+				<img width="100" src="<?php echo $house['photos'][0]['small']; ?>" alt="<?php echo $title; ?>" />
+				<?php endif; ?>
+			</a>
+		</div>
+		<div class="info">
+			<h3>
+				<a title="<?php echo $title; ?>" href="<?php echo $link; ?>">
+					<?php echo $title; ?>
+				</a>
+			</h3>
+			<div class="details">
+				<?php
+				if (!empty($house['forsale_price']))
+				{
+					$price = '€ ' . $house['forsale_price'] . ',-';
+				}
+				elseif (!empty($house['price']))
+				{
+					$price = '€ ' . $house['price'] . ',- (' . __($house['price_inc'] == '1' ? 'inclusive' : 'exclusive', 'nomis') . ')';
+				}
+				list($year, $month, $day) = explode('-', $house['available_at']);
+				$available = strtotime($house['available_at']) < time() ? __('Directly available', 'nomis') : __('Available from', 'nomis') . ' ' . $day . '-' . $month . '-' . $year;
+
+				echo $this->html($price) . '<br />';
+				echo !empty($house['bedrooms']) ? ' ' . $house['bedrooms'] . ' ' . __('bedroom' . ($house['bedrooms'] == '1' ? '' : 's')) . '<br />' : '';
+				echo $available;
+				?>
+				<div class="clear"></div>
+			</div>
+			<a class="button" href="<?php echo $link; ?>"><?php echo __('View property', 'nomis'); ?></a>
+		</div>
+		<div class="clear"></div>
+	</li>
+	<?php $i ++; endforeach; ?>
+</ul>
+
+<?php include '_footer.phtml'; ?>

@@ -1,0 +1,25 @@
+<?php include '_header.phtml'; ?>
+<?php include '_nav.phtml'; ?>
+
+<form method="get" action="" id="nomis-mobile-searchform">
+
+	<input type="hidden" name="a" value="properties" />
+	<input type="hidden" name="lang" value="<?php echo $lang; ?>" />
+
+	<?php
+	$searchCriteria = array(
+		'maximum_price' => 1,
+		'minimum_price' => 1,
+		'city' => 1,
+		'interior' => 1,
+		'house_type' => 1
+	);
+
+	nomisSearch($searchCriteria, $data, 'search', $this->getAllCities(), $this->getAllDistricts(), $this->getAllHouseTypes(), $this->getAllCountries());
+	?>
+
+	<input class="button" type="submit" value="<?php echo _e('Search', 'nomis'); ?>" title="<?php _e('Search', 'nomis'); ?>" />
+
+</form>
+
+<?php include '_footer.phtml'; ?>

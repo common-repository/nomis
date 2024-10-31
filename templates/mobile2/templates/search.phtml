@@ -1,0 +1,24 @@
+
+	
+	
+		<ul data-role="listview">
+			<li data-role="list-divider"><?php echo $data['total'] . ' result' . ($data['total'] == 1 ? '' : 's'); ?></li>
+			<?php
+			$urlParams = array_merge($data['search'], array());
+
+			foreach ($data['result'] as $id => $house) :
+			$urlParams['id'] = $id;
+			?>
+			<li>
+				<a href="index.php?action=property&amp;lang=<?php echo $_GET['lang']; ?>&amp;<?php echo http_build_query($urlParams, '', '&amp;'); ?>" data-transition="slide">
+					<?php if (empty($house['photos'][0])) : ?>
+					<img src="no.image.png" alt="" height="80">
+					<?php else : ?>
+					<img src="<?php echo $house['photos'][0]['small']; ?>" alt="" height="80">
+					<?php endif; ?>
+					<h3><?php echo $this->html($house['street']); ?> (€<?php echo $house['price']; ?>)</h3>
+					<p><?php echo $this->html($house['city']) . ', ' . $this->html($house['district']); ?></p>
+				</a>
+			</li>
+			<?php endforeach; ?>
+		</ul>

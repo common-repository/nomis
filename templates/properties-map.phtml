@@ -1,0 +1,81 @@
+<?php
+$mapItems = array();
+$num = 0;
+$totalLat = 0;
+$totalLng = 0;
+
+foreach($this->_data['result'] as $house)
+{
+	if (empty($house['lat']) || empty($house['lng']))
+	{
+		continue;
+	}
+
+	$num ++;
+	$totalLat += $house['lat'];
+	$totalLng += $house['lng'];
+	
+	$mapItems[] =
+		'{ street: \'' .  $this->html(addslashes($house['street'] . ', ' . $house['city'])) . ', The Netherlands\',' .
+		'coor: new google.maps.LatLng(' . $house['lat'] . ', ' . $house['lng'] . '),' .
+		'html: \'' . $this->html(addslashes($house['street'])) . '<br />' . $this->html(addslashes($house['city'])) . '\',' .
+		'url: \'' . trim(get_bloginfo('url'), '/') . '/property' . (defined('ICL_LANGUAGE_CODE') ? '-' . ICL_LANGUAGE_CODE : '') . '/' . $this->seo($house['city']) . '/' . $this->seo($house['street']) . '/' . $house['id'] . '\' }' . "\n";
+}
+
+$averageLat = round($totalLat / $num, 7);
+$averageLng = round($totalLng / $num, 7);
+?>
+<div id="nomis-properties-map">
+	<p class="error"><?php _e('Could not load the map', 'nomis'); ?></p>
+</div>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+	var houses = [ <?php echo implode(',', $mapItems); ?> ]
+	var map;
+
+	function initialize()
+	{
+		var myOptions = {
+			zoom: 8,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+
+		map = new google.maps.Map(document.getElementById("nomis-properties-map"), myOptions);
+
+		for (var i = 0; i < houses.length; i++)
+		{
+			createMarker(houses[i]['street'], houses[i]['coor'], houses[i]['html'], houses[i]['url']);
+		}
+
+		map.setCenter(new google.maps.LatLng(<?php echo $averageLat . ', ' . $averageLng; ?>));
+	}
+
+	function createMarker(address, coor, html, url)
+	{
+		var marker = new google.maps.Marker({
+			map: map,
+			position: coor
+		});
+
+		var infowindow = new google.maps.InfoWindow({
+			content: '<a href="' + url + '">' + html + '<\/a>'
+		});
+
+		var marker = new google.maps.Marker({
+			position: coor,
+			map: map,
+			title: address
+		});
+
+		google.maps.event.addListener(marker, 'click', function()
+		{
+			infowindow.open(map, marker);
+		});
+	}
+
+	$(function()
+	{
+		$('#maps .error').hide();
+		initialize();
+	});
+</script>

@@ -1,0 +1,188 @@
+<?php include '_header.phtml'; ?>
+
+<?php
+$house = $this->_data['property'];
+$title = $this->html($house['street'] . ', ' . $house['city']);
+?>
+
+<?php include '_nav.phtml'; ?>
+
+<h2 id="property-title">
+	<span>
+		<?php echo $title; ?>
+	</span>
+</h2>
+
+<img style="display:none;" src="<?php echo $house['photos'][0]['middle']; ?>" alt="photo" id="photo-example" />
+
+<script type="text/javascript" src="http://static.annommx.com/javascript/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/nomis/javascript/jquery.jcarousel.min.js"></script>
+
+<div id="nomis-photos-container">
+	<ul id="nomis-photos">
+		<?php $i = 0; foreach ($house['photos'] as $photo): $i++; ?>
+		<li>
+			<img src="<?php echo $photo['middle']; ?>" alt="<?php echo $title; ?>" />
+		</li>
+		<?php endforeach; ?>
+	</ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$('#nomis-photos li img').attr('width', $('#photo-example').width()).attr('height', $('#photo-example').height());
+	$('#nomis-photos').jcarousel({
+		scroll: 1
+	});
+	$('#nomis-photos').css({height:$('#photo-example').height()+'px'});
+});
+</script>
+<div class="clear"></div>
+
+
+
+<div id="nomis-details" class="details">
+	<?php nomisDetails($house, array(
+		'price' => 1,
+		'interior' => 1,
+		'house_type' => 1,
+		'surface' => 1,
+		'bedrooms' => 1,
+		'outside_space' => 1,
+		'available_at' => 1,
+	));	?>
+	<div class="clear"></div>
+</div>
+
+<?php include dirname(__FILE__) . '/../_property_description.phtml'; ?>
+
+
+<!--
+<div id="nomis-maps" class="maps" data-lat="<?php echo $house['lat']; ?>" data-lng="<?php echo $house['lng']; ?>" data-title="<?php echo $title; ?>">&nbsp;</div>
+<div id="nomis-streetview" class="streetview" data-lat="<?php echo $house['lat']; ?>" data-lng="<?php echo $house['lng']; ?>">&nbsp;</div>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+	$(window).load(function()
+	{
+		latLng = new google.maps.LatLng($('#nomis-maps').data('lat'), $('#nomis-maps').data('lng'));
+
+		var myOptions = {
+			zoom: 13,
+			center: latLng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+
+		var map = new google.maps.Map($('#nomis-maps')[0], myOptions);
+
+		var marker = new google.maps.Marker({
+			position: latLng,
+			map: map,
+			title: $('#nomis-maps').data('title')
+		});
+
+		var panoramaOptions = {
+			position: latLng,
+			pov: {
+				heading: 0,
+				pitch: 0,
+				zoom: 0
+			}
+		};
+
+		var panorama = new  google.maps.StreetViewPanorama($('#nomis-streetview')[0], panoramaOptions);
+	});
+</script>
+-->
+
+<?php if ($house['lat'] != '' && $house['lat'] != ''): ?>
+<div class="location">
+	<div class="location-controls">
+		<a href="javascript:;" id="show-maps"><span><?php echo __('Maps', 'nomis'); ?></span></a>
+		<a href="javascript:;" id="show-streetview"><span><?php echo __('Streetview', 'nomis'); ?></span></a>
+		<div class="clear"></div>
+	</div>
+	<div id="media-holder">
+		<div id="nomis-maps" class="maps" data-lat="<?php echo $house['lat']; ?>" data-lng="<?php echo $house['lng']; ?>" data-title="<?php echo $title; ?>">&nbsp;</div>
+		<div id="nomis-streetview" class="streetview" data-lat="<?php echo $house['lat']; ?>" data-lng="<?php echo $house['lng']; ?>">&nbsp;</div>
+	</div>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="<?php echo WP_PLUGIN_URL; ?>/nomis/javascript/maps.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('#show-maps').click();
+		});
+	</script>
+</div>
+<?php endif; ?>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+	$link = get_home_url() . '/property/' . $this->html($house['city'] . '/' . $house['street']) . '/' . $house['id'];
+	$subject = $_POST['name'] . ' is geinteresseerd in ' . $house['street'] . ', ' . $house['city'];
+	$message = $_POST['name'] . ' (' . $_POST['email'] . ') is geinteresseerd in deze woning: <a href="' . $link . '">' . $house['street'] . ', ' . $house['city'] . "</a><br><br>" . $_POST['message'];
+	$headers = 'FROM: ' . $_POST['name'] . ' <' . $_POST['email'] . '>' . "\r\nMIME-Version: 1.0\r\nContent-type: text/html; charset=utf-8";
+
+	if (@mail(get_option('nomis_property_contact_email'), $subject, $message, $headers))
+	{
+		$success = true;
+	}
+}
+?>
+<div id="contact-about-house">
+	<?php if (isset($success) && $success == true): ?>
+		<p><?php _e('Thanks for your contact request, we will be in touch with you as soon as possible!', 'nomis'); ?></p>
+	<?php else: ?>
+		<h3><?php _e('Contact us about this house', 'nomis'); ?></h3>
+		<p class="error"></p>
+		<form method="post" action="?a=property&amp;lang=<?php echo $lang; ?>&amp;id=<?php echo $house['id']; ?>">
+
+			<input type="text" name="name" id="contact-about-house-name" placeholder="<?php _e('Your name', 'nomis'); ?>" />
+
+			<input type="text" name="email" id="contact-about-house-email" placeholder="<?php _e('Your email', 'nomis'); ?>" />
+
+			<textarea placeholder="<?php _e('Message', 'nomis'); ?>" name="message" cols="30" rows="5"></textarea>
+
+			<input class="button" type="submit" value="<?php _e('Send'); ?>" name="mailtofriend" class="submit" id="contact-about-house-submit" />
+		</form>
+	<?php endif; ?>
+</div>
+<script type="text/javascript">
+function isValidEmailAddress(emailAddress)
+{
+	var pattern = new RegExp(/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/);
+	return pattern.test(emailAddress);
+}
+
+$(document).ready(function()
+{
+	console.log($('#contact-about-house form'));
+	$('#contact-about-house form').submit(function()
+	{
+		var error = '';
+
+		if ($('#contact-about-house-name').val() == '')
+		{
+			error += '<?php _e('Please enter your name.', 'nomis'); ?> ';
+		}
+
+		if (!isValidEmailAddress($('#contact-about-house-email').val()))
+		{
+			error += '<?php _e('Please enter a valid emailaddress.', 'nomis'); ?> ';
+		}
+
+		if (error == '')
+		{
+			return true;
+		}
+		else
+		{
+			$('#contact-about-house .error').html(error);
+			return false;
+		}
+	});
+});
+</script>
+<?php include '_footer.phtml'; ?>

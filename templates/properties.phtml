@@ -1,0 +1,122 @@
+<?php
+
+if (!function_exists('pagination'))
+{
+	function pagination($data)
+	{
+		$pageOffset = 3;
+
+		$currentPage = $data['page'];
+		$totalPages = $data['total_pages'];
+
+		$startCount = max($currentPage - $pageOffset, 1);
+		$endCount = min($currentPage + $pageOffset, $totalPages);
+
+		$pages = array();
+
+		if ($startCount > 1)
+		{
+			$pages[] = 1;
+		}
+
+		for ($i = $startCount; $i <= $endCount; ++$i)
+		{
+			$pages[] = $i;
+		}
+
+		if ($endCount < $totalPages)
+		{
+			$pages[] = $totalPages;
+		}
+
+		echo '<ul id="nomis-pagination">';		
+		if ($currentPage > 1)
+		{
+			$data['search']['page'] = $currentPage - 1;
+			global $post;
+			echo '<li class="previous"><a href="' . get_page_link($post->ID) . '?' . http_build_query($data['search'], '', '&amp;') . '">&laquo;</a></li>';
+		}
+		foreach ($pages as $page)
+		{
+			$data['search']['page'] = $page;
+			global $post;
+			?>
+			<li<?php if ($page == $currentPage) echo ' class="active"'; ?>>
+				<a href="<?php echo get_page_link($post->ID) . '?' . http_build_query($data['search'], '', '&amp;'); ?>">
+					<?php echo $page; ?>
+				</a>
+			</li>
+			<?php
+		}
+
+		if ($currentPage < $totalPages)
+		{
+			$data['search']['page'] = $currentPage + 1;
+			global $post;
+			echo '<li class="next"><a href="' . get_page_link($post->ID) . '?' . http_build_query($data['search'], '', '&amp;') . '">&raquo;</a></li>';
+		}
+		echo '</ul>';
+	}
+}
+?>
+
+<?php if (empty($this->_data['result'])): ?>
+<p id="nomis-properties-empty">
+	<?php echo __('No properties that match your search criteria were found.', 'nomis'); ?>
+</p>
+<?php else: ?>
+<ul id="nomis-properties">
+	<?php $i = 1; foreach($this->_data['result'] as $house):
+		$title = $this->html($house['city'] . ', ' . $house['street']);
+		$link = trim(get_bloginfo('url'), '/') . (function_exists('qtrans_getLanguage') ? '/' . qtrans_getLanguage() : '' ) . '/property' . (defined('ICL_LANGUAGE_CODE') ? '-' . ICL_LANGUAGE_CODE : '') . '/' . $this->seo($house['city']) . '/' . $this->seo($house['street']) . '/' . $house['id'] . '/';
+	?>
+	<li class="<?php
+		echo $i == 1 ? 'first ' : '';
+		echo $i % 2 == 0 ? 'even ' : 'odd ';
+		echo $i == count($this->_data['result']) ? 'last ' : '';
+		echo $house['forsale'] == '1' ? 'sale ' : 'rent ';
+		$propertyStatusEnum = include dirname(__FILE__) . '/../arrays/property-status.array.php';
+		echo $propertyStatusEnum[$house['forrent_front_status']] . ' ';
+		if (!in_array($house['forrent_front_status'], array(436, 442, 443, 444)))
+		{
+			echo strtotime($house['available_at']) < time() ? 'available ' : 'unavailable ';
+		}
+		if (!in_array($house['forrent_front_status'], array(437)))
+		{
+			echo strtotime($house['registration_date']) > time() - 5184000 ? 'new ' : ''; //houses that have been added in the last two months are new, 5184000 = 60*60*24*30*2
+		}
+		?>">
+
+		<?php if (!empty($house['forrent_front_status']) && $house['forrent_front_status'] != 1): ?>
+		<div class="status">
+			<?php echo __(ucfirst(str_replace('-', ' ', $propertyStatusEnum[$house['forrent_front_status']])), 'nomis'); ?>
+		</div>
+		<?php endif; ?>
+		
+		<div class="photo">
+			<a href="<?php echo $link; ?>"<?php if (!empty($house['photos'][0]['small'])) echo ' style="background-image:url(' . $house['photos'][0]['small'] . ');"'; ?>>
+				<?php echo $title; ?>
+			</a>
+		</div>
+		<div class="info">
+			<h3>
+				<a title="<?php echo $title; ?>" href="<?php echo $link; ?>">
+					<?php echo $title; ?>
+				</a>
+			</h3>
+			<div class="details">
+				<?php nomisDetails($house, get_option('nomis_properties_details')); ?>
+			</div>
+			<a class="view" href="<?php echo $link; ?>"><?php echo __('View property', 'nomis'); ?></a>
+		</div>
+		<div class="clear"></div>
+	</li>
+	<?php $i ++; endforeach; ?>
+</ul>
+<div class="clear"></div>
+
+<?php if ($data['total_pages'] > 1) pagination($data); ?>
+
+<?php endif; ?>
+
+<div class="clear"></div>
